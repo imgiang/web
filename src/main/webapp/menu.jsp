@@ -13,9 +13,6 @@
 <%--giang--%>
 <fmt:setLocale value="${sessionScope.LANG}"/>
 <fmt:setBundle basename="mlang"/>
-<%--giang--%>
-
-
 <nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090" >
     <div class="container" >
         <a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVE</a>

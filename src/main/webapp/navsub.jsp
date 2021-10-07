@@ -48,10 +48,12 @@
             </ul>
             <!-- Links -->
 
-            <form class="form-inline" action="search" method="get" style="margin-top: 1px; margin-bottom: 1px;">
+            <form class="form-inline" style="margin-top: 1px; margin-bottom: 1px;weight:70px;" action="search" method="get">
                 <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" name="txt" type="text" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" value="${txts}" name="txt" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-lg btn-success" type="submit">Search</button>
                 </div>
+
             </form>
         </div>
         <!-- Collapsible content -->
