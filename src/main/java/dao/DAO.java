@@ -21,7 +21,7 @@ public class DAO {
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothes", "root", "Thuhuong01");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Clothes_web", "root", "123456");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -121,15 +121,15 @@ public class DAO {
         return null;
     }
     //    giang
-    public List<Product> searchProduct (String txtSearch) {
+    public List<Product> searchByName(String txtSearch) {
         List<Product> list = new ArrayList<>();
-        String query = "select * from product\n" +
-                "where match(name, price, title, description)\n" +
-                "AGAINST( ? IN NATURAL LANGUAGE MODE )";
+        String query = "select * from product"+ "\n" +
+                "where name like ?";
+        String txtSearch2= txtSearch.toUpperCase();
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setString(1,"'" + txtSearch + "'");
+            ps.setString(1,"%"+txtSearch2+"%");
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
@@ -144,19 +144,18 @@ public class DAO {
         return list;
     }
 
-    public List<Comment> getComment() {
+    public List<Comment> getComment(String id) {
         List<Comment> list = new ArrayList<>();
-        String query = "select * from tcomment";
-//                + "\n" +
-//                "where id=?";
+        String query = "select * from comment"+ "\n" +
+                "where id=?";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-//            ps.setString(1,cmtid);
+            ps.setString(1,id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 while (rs.next()) {
-                    list.add(new Comment(rs.getString(1),
+                    list.add(new Comment(rs.getInt(1),
                             rs.getString(2),
                             rs.getString(3),
                             rs.getString(4)));
@@ -165,20 +164,6 @@ public class DAO {
         } catch (Exception e) {
         }
         return list;
-    }
-    public Comment addComment(String cmt, String gmail, String ten, String id) {
-        String query = "insert into tcomment values(?,?,?,?);";
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1,cmt);
-            ps.setString(2,gmail);
-            ps.setString(3,ten);
-            ps.setString(4,id);
-            ps.execute();
-        } catch (Exception e) {
-        }
-        return null;
     }
 
 //    giang
@@ -196,15 +181,15 @@ public class DAO {
     public static void main(String[] args) {
 
 //        DAO dao = new DAO();
-//////        List<Product> list = dao.getAllProduct();
+////        List<Product> list = dao.getAllProduct();
 //        List<Category> listC = dao.getAllCategory();
-////        List<Product> listPC = dao.getProductCID("2");
-////        Product listPI = dao.getProductID("2");
-//
+//        List<Product> listPC = dao.getProductCID("2");
+//        Product listPI = dao.getProductID("2");
+
         DAO dao1 = new DAO();
-//        List<Comment> listu = dao1.getComment();
-//        System.out.println(listu);
-//        System.out.println(new DAO().getConnection());
-        //Comment addcmt = dao1.addComment("quan nay dep ghe", "thuygiang768@gmail.com", "giang", "1");
+        List<Product> listu = dao1.searchByName("NAM");
+        System.out.println(listu);
+
+
     }
 }
