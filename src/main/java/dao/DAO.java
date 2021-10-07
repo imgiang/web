@@ -21,7 +21,7 @@ public class DAO {
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/web", "root", "tung03102001");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothes", "root", "Thuhuong01");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,7 +48,9 @@ public class DAO {
                         rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6)));
+                        rs.getString(6),
+                        rs.getString(9),
+                        rs.getInt(10)));
             }
         } catch (Exception e) {
         }
@@ -93,7 +95,9 @@ public class DAO {
                         rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6)));
+                        rs.getString(6),
+                        rs.getString(9),
+                        rs.getInt(10)));
             }
         } catch (Exception e) {
         }
@@ -114,22 +118,24 @@ public class DAO {
                         rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6));
+                        rs.getString(6),
+                        rs.getString(9),
+                        rs.getInt(10));
             }
         } catch (Exception e) {
         }
         return null;
     }
     //    giang
-    public List<Product> searchByName(String txtSearch) {
+    public List<Product> searchProduct (String txtSearch) {
         List<Product> list = new ArrayList<>();
-        String query = "select * from product"+ "\n" +
-                "where name like ?";
-        String txtSearch2= txtSearch.toUpperCase();
+        String query = "select * from product\n" +
+                "where match(name, title, description)\n" +
+                "AGAINST( ? IN NATURAL LANGUAGE MODE )";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setString(1,"%"+txtSearch2+"%");
+            ps.setString(1,"'" + txtSearch + "'");
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
@@ -137,12 +143,15 @@ public class DAO {
                         rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6)));
+                        rs.getString(6),
+                        rs.getString(9),
+                        rs.getInt(10)));
             }
         } catch (Exception e) {
         }
         return list;
     }
+
 
     public List<Comment> getComment() {
         List<Comment> list = new ArrayList<>();
@@ -195,7 +204,8 @@ public class DAO {
                         rs.getDouble(4),
                         rs.getString(5),
                         rs.getString(6),
-                        1);
+                        rs.getString(9),
+                        rs.getInt(10));
             }
         } catch (Exception e) {
         }

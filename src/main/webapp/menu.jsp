@@ -13,7 +13,7 @@
 <%--giang--%>
 <fmt:setLocale value="${sessionScope.LANG}"/>
 <fmt:setBundle basename="mlang"/>
-<nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090" >
+<nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090;height:60px;" >
     <div class="container" >
         <a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,11 +44,11 @@
 
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
-                <button class="btn hover" type="submit"><span><img src="https://cdn-icons-png.flaticon.com/128/3144/3144456.png" style="width: 25px; margin-right: 10px"></span></button>
+                <span><a class="nav-link" href="print"><img style="height:35px;" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" ></a></span>
 
 
                 <div class="btn-group ms-3">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button style="height:45px;margin-top:5px;" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <fmt:message key="a.language"/>
                     </button>
                     <ul class="dropdown-menu">
@@ -58,7 +58,7 @@
                 </div>
                 <%--                    giang--%>
                 <%--                    <button class="b.n btn-outline-success" type="submit" id="login" formaction="/login.jsp">Login</button>--%>
-                <button id="login" type="button" class="guest btn btn-primary ms-3 d-none" data-bs-toggle="modal" data-bs-target="#modal-login"><span><fmt:message key="a.login"/></span></button>
+                <button id="login" style="height:45px;margin-top:5px;" type="button" class="guest btn btn-primary ms-3 d-none" data-bs-toggle="modal" data-bs-target="#modal-login"><span><fmt:message key="a.login"/></span></button>
                 <div id="login-spinner" class="spinner-border text-light ms-3" role="status"></div>
                 <div class="dropdown">
                     <img id="avatar"  src="./assets/avatar.jpg" data-bs-toggle="dropdown" width="38x" height="38x"

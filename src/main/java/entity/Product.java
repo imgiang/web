@@ -8,29 +8,22 @@ public class Product {
     private double price;
     private String title;
     private String description;
+    private String size;
     private int amount;
 
     public Product(){
 
 
     }
-    public Product(int id, String name, String image, double price, String title, String description) {
+
+    public Product(int id, String name, String image, double price, String title, String description,String size,int amount) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;
         this.title = title;
         this.description = description;
-
-
-    }
-    public Product(int id, String name, String image, double price, String title, String description,int amount) {
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.price = price;
-        this.title = title;
-        this.description = description;
+        this.size=size;
         this.amount=amount;
 
     }
@@ -82,6 +75,14 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
     public int getAmount() {
         return amount;
     }
@@ -92,7 +93,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ",size="+size+",amount="+amount+'}';
     }
 
 
