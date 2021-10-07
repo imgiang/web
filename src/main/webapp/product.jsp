@@ -501,7 +501,7 @@ height:800px;
                             <input type="text" name="quantity" value="1" class="qty">
                             <div class="qtyplus">+</div>
                         </form>
-                        <a href="#" class="round-black-btn">Add to Cart</a>
+                        <a href="print" class="round-black-btn">Add to Cart</a>
                     </div>
                 </div>
             </div>

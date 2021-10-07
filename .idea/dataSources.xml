@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="clothes_web@localhost" uuid="60bca148-c5e2-4082-bf64-1803d8e6688b">
+    <data-source source="LOCAL" name="web@localhost" uuid="f272c7a6-3fce-454b-af33-ecd6e91f4caf">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/clothes_web</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/web</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-<<<<<<< HEAD
-    <data-source source="LOCAL" name="clothes@localhost" uuid="8ef3ed0d-3f4c-4eae-b7ff-df447740eed8">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/clothes</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-=======
->>>>>>> origin/master
   </component>
 </project>
