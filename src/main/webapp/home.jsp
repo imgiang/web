@@ -210,7 +210,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://media.canifa.com/wysiwyg/bst-chom-thu-listing.jpg" class="d-block w-100" alt="...">
+        <img src="https://media.canifa.com/wysiwyg/bst-chom-thu-listing.jpg" style="height:680px;" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>
@@ -301,43 +301,7 @@
     <!--Section: Products v.3-->
 
     <!--Pagination-->
-    <nav class="d-flex justify-content-center wow fadeIn">
-      <ul class="pagination pg-blue">
 
-        <!--Arrow left-->
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-
-        <li class="page-item active">
-          <a class="page-link" href="#">1
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">4</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">5</a>
-        </li>
-
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
     <!--Pagination-->
 
   </div>
@@ -367,111 +331,6 @@
 <script src="https://kit.fontawesome.com/cb0487757c.js" crossorigin="anonymous"></script>
 
 
-<%--&lt;%&ndash;giang&ndash;%&gt;--%>
-<%--<script th:src="@{/js/main.js}" src="./js/main.js"></script>--%>
-
-<%--<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>--%>
-<%--<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>--%>
-<%--<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>--%>
-<%--<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>--%>
-
-<%--<script type="module">--%>
-
-<%--  const firebaseConfig = {--%>
-<%--    apiKey: "AIzaSyCCDuXhP2pXyKcS5s5JJE6fApDlKHoUZEI",--%>
-<%--    authDomain: "clothes-12f8a.firebaseapp.com",--%>
-<%--    projectId: "clothes-12f8a",--%>
-<%--    storageBucket: "clothes-12f8a.appspot.com",--%>
-<%--    messagingSenderId: "1068860917688",--%>
-<%--    appId: "1:1068860917688:web:3890226b6a54ea4b94f14d",--%>
-<%--    measurementId: "G-Y5LB0WWXV0"--%>
-<%--  };--%>
-
-<%--  // $(function () {--%>
-<%--  //     firebase.initializeApp(firebaseConfig);--%>
-<%--  //     alert(firebase.SDK_VERSION)--%>
-<%--  // });--%>
-
-<%--  // Initialize Firebase--%>
-
-
-
-<%--  var uiConfig = {--%>
-<%--    signInFlow: 'popup',--%>
-<%--    signInOptions: [--%>
-<%--      firebase.auth.EmailAuthProvider.PROVIDER_ID,--%>
-<%--      {--%>
-<%--        provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,--%>
-<%--        recaptchaParameters: {--%>
-<%--          type: 'image',--%>
-<%--          size: 'normal',--%>
-<%--          badge: 'bottomleft'--%>
-<%--        },--%>
-<%--        defaultCountry: 'VN'--%>
-<%--      },--%>
-<%--      firebase.auth.FacebookAuthProvider.PROVIDER_ID--%>
-<%--    ],--%>
-
-<%--    callbacks: {--%>
-<%--      signInSuccessWithAuthResult: function (authResult) {--%>
-<%--        if (authResult.user) {--%>
-<%--          handleSignedInUser(authResult.user);--%>
-<%--        }--%>
-<%--        return false;--%>
-<%--      },--%>
-<%--      signInFailure: function (error) {--%>
-
-<%--      }--%>
-<%--    },--%>
-<%--    autoUpgradeAnonymousUsers: true--%>
-
-<%--  };--%>
-
-<%--  //----------------%>
-
-
-<%--  var ui--%>
-
-<%--  $(function () {--%>
-<%--    firebase.initializeApp(firebaseConfig);--%>
-<%--    ui = new firebaseui.auth.AuthUI(firebase.auth());--%>
-<%--    ui.start('#firebaseui-auth-container', uiConfig);--%>
-<%--    firebase.auth().onAuthStateChanged(function (user) {--%>
-<%--      user ? handleSignedInUser(user) : handleSignedOutUser();--%>
-<%--      $("#login-spinner").addClass("d-none")--%>
-<%--    });--%>
-<%--  });--%>
-
-<%--  function handleSignedInUser(user) {--%>
-<%--    $(".user").removeClass("d-none")--%>
-<%--    $(".guest").addClass("d-none")--%>
-
-<%--    $("#name").text(user.displayName);--%>
-<%--    $("#email").text(user.email);--%>
-<%--    $("#phone").text(user.phoneNumber);--%>
-<%--    if (user.photoURL) {--%>
-<%--      $(".avatar").attr("src",user.photoURL);--%>
-<%--    } else {--%>
-<%--      $(".avatar").attr("src","/assets/avatar.jpg");--%>
-<%--    }--%>
-<%--    $('#modal-login').modal('hide');--%>
-<%--  }--%>
-
-<%--  function handleSignedOutUser() {--%>
-<%--    ui.start("#firebaseui-auth-container", uiConfig);--%>
-<%--    $(".user").addClass("d-none")--%>
-<%--    $(".guest").removeClass("d-none")--%>
-<%--  }--%>
-
-<%--  // function handleSignedInUser(user) {--%>
-<%--  //     document.write("<pre>" + JSON.stringify(user, undefined, 2) + "</pre>")--%>
-<%--  // }--%>
-
-
-
-<%--</script>--%>
-<%--giang--%>
-<%--giang--%>
 
 </body>
 </html>

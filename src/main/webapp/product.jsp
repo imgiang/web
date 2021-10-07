@@ -1,4 +1,4 @@
--<%--
+<%--
   Created by IntelliJ IDEA.
   User: THU HUONG
   Date: 9/3/2021
@@ -435,9 +435,6 @@ height:800px;
 <header>
     <jsp:include page="menu.jsp"></jsp:include>
     <jsp:include page="navsub.jsp"></jsp:include>
-
-
-
 </header>
 <main>
     <div class="container mt-5" style="border-color:red">
@@ -446,7 +443,7 @@ height:800px;
             <div class="col-md-6">
                 <div id="slider" class="owl-carousel product-slider">
                     <div class="item">
-                        <img class="mau" src="${detail.image}" />
+                        <img class="mau" src="${detail.image} " style="height:700px;" />
                     </div>
 
 
@@ -492,6 +489,31 @@ height:800px;
                                 <option>Green</option>
                                 <option>Red</option>
                             </select>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div>
+                        <a class="btn btn-primary" style="color:blue;background-color:#cfcccc;font-size:15px;border-color:white;margin-top: 6px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Hướng dẫn chọn size
+                        </a>
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hướng dẫn chọn kích cỡ</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p style="color:blue;">*Bảng kích thước này chỉ dành cho mục đích tham khảo</p>
+                                    <img src="${detail.size}" style="height:590px;width:750px;"alt="...">
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                     <div class="product-count">
