@@ -115,9 +115,6 @@
       background: #b71540;
       top: -4px;
     }
-
-
-    /*gây lỗi button và addtocart ko cùng đường dẫn*/
     .product-grid .add-to-cart{
       color: #fff;
       background: #b71540;
@@ -132,9 +129,6 @@
       bottom: 10px;
       transition: all 0.2s ease-out;
     }
-    /*.card{*/
-    /*  margin-top: 20px;*/
-    /*}*/
     .product-grid .add-to-cart:hover{ text-shadow: 0 0 5px #000; }
     .product-grid:hover .add-to-cart{ opacity:1; }
     .product-grid .product-content{
@@ -258,20 +252,17 @@
           <div class="col-12 col-lg-4 col-md-6 mb-4">
             <div class="product-grid">
               <div class="product-image">
-                  <%--                <a href="detail?pid=${o.id}" class="image">--%>
-                <a href="#" class="image">
+                <a href="detail?pid=${o.id}" class="image">
                   <img class="pic-1" src="${o.image}">
                 </a>
                 <span class="product-sale-label">sale!</span>
                 <div class="price"> $${o.price} </div>
                   <%--                <a href="#" class="add-to-cart"> add to cart </a>--%>
-                  <%--                <a href="" class="add-to-cart"> add to cart </a>--%>
-                <a href="cart?id=${o.id}" class="add-to-cart">add-to-cart</a>
-                  <%--                <a href="print" class="add-to-cart"> add to cart </a>--%>
+<%--                <a href="cart?id=${o.id}" class="add-to-cart"> add to cart </a>--%>
+                                  <a href="print" class="add-to-cart"> add to cart </a>
               </div>
               <div class="product-content">
                 <h3 class="title"><a href="detail?pid=${o.id}">${o.name}</a></h3>
-
                 <ul class="rating">
                   <li class="fas fa-star"></li>
                   <li class="fas fa-star"></li>
@@ -279,12 +270,9 @@
                   <li class="fas fa-star"></li>
                   <li class="fas fa-star"></li>
                 </ul>
-
               </div>
-                <%--             --%>
             </div>
           </div>
-
           <!--Grid column-->
 
         </c:forEach>
