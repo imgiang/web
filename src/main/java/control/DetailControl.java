@@ -1,9 +1,8 @@
 package control;
 
 
-import dao.DAO;
 import entity.Category;
-import entity.Comment;
+//import entity.Comment;
 import entity.Product;
 
 import javax.servlet.RequestDispatcher;
@@ -25,8 +24,8 @@ public class DetailControl extends HttpServlet {
         List<Category> listC = dao.getAllCategory();
         List<Product> listPC = dao.getProductCID(cateID);
 
-        List<Comment> listCmt = dao.getComment();
-        req.setAttribute("listCmt",listCmt);
+//        List<Comment> listCmt = dao.getComment();
+//        req.setAttribute("listCmt",listCmt);
 
         Product proid= dao.getProductID(PROID);
         req.setAttribute("detail",proid);

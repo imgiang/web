@@ -323,7 +323,7 @@
         }
         /*giang*/
         .mau{
-height:800px;
+            height:800px;
             width: 200px;
         }
         body{
@@ -430,7 +430,7 @@ height:800px;
             background: rgba(0, 0, 0, 0.05)
         }
     </style>
-    </head>
+</head>
 <body>
 <header>
     <jsp:include page="menu.jsp"></jsp:include>
@@ -501,7 +501,8 @@ height:800px;
                             <input type="text" name="quantity" value="1" class="qty">
                             <div class="qtyplus">+</div>
                         </form>
-                        <a href="print" class="round-black-btn">Add to Cart</a>
+                        <%--                        <a href="print" class="round-black-btn">Add to Cart</a>--%>
+                        <a href="cart?id=${o.id}" class="round-black-btn">Add to Cart </a>
                     </div>
                 </div>
             </div>
@@ -520,7 +521,7 @@ height:800px;
                     ${detail.description}
                 </div>
 
-<%--                review--%>
+                <%--                review--%>
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div class="review-heading">REVIEWS</div>
 
@@ -574,11 +575,11 @@ height:800px;
                             </div>
                         </div>
 
-                            <button type="submit" class="round-black-btn">Submit Review</button>
+                        <button type="submit" class="round-black-btn">Submit Review</button>
 
                     </form>
                 </div>
-<%--                review--%>
+                <%--                review--%>
             </div>
         </div>
     </div>

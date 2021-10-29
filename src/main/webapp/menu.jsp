@@ -13,6 +13,9 @@
 <%--giang--%>
 <fmt:setLocale value="${sessionScope.LANG}"/>
 <fmt:setBundle basename="mlang"/>
+<%--giang--%>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090" >
     <div class="container" >
         <a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVE</a>
@@ -32,7 +35,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style="color:#afafd0 ;font-size:20px;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       Genres
+                        Genres
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -44,7 +47,7 @@
 
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
-                <button class="btn hover" type="submit"><span><img src="https://cdn-icons-png.flaticon.com/128/3144/3144456.png" style="width: 25px; margin-right: 10px"><a class="nav-link" href="print">Cart</a></span></button>
+                <button class="btn hover" type="submit"><span> width: 25px; margin-right: 10px"><a class="nav-link" href="print">Cart</a></span></button>
 
 
                 <div class="btn-group ms-3">
