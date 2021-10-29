@@ -1,5 +1,6 @@
 package control;
 
+import dao.DAO;
 import entity.Product;
 
 import javax.servlet.ServletException;

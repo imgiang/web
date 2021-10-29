@@ -1,5 +1,7 @@
 package control;
 
+import dao.DAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
