@@ -258,8 +258,8 @@
                 <span class="product-sale-label">sale!</span>
                 <div class="price"> $${o.price} </div>
                   <%--                <a href="#" class="add-to-cart"> add to cart </a>--%>
-<%--                <a href="cart?id=${o.id}" class="add-to-cart"> add to cart </a>--%>
-                                  <a href="print" class="add-to-cart"> add to cart </a>
+                <a href="cart?id=${o.id}" class="add-to-cart"> add to cart </a>
+<%--                                  <a href="print" class="add-to-cart"> add to cart </a>--%>
               </div>
               <div class="product-content">
                 <h3 class="title"><a href="detail?pid=${o.id}">${o.name}</a></h3>

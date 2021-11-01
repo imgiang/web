@@ -46,7 +46,7 @@ public class OrderControl extends HttpServlet {
             o.setMaxAge(0);
             response.addCookie(o);
         }
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("checkout.jsp");
     }
 
 

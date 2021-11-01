@@ -6,7 +6,6 @@
 package control;
 
 import dao.DAO;
-
 import entity.Category;
 import entity.Product;
 import java.io.IOException;

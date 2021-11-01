@@ -3,6 +3,7 @@ package control;
 
 import dao.DAO;
 import entity.Category;
+//import entity.Comment;
 import entity.Comment;
 import entity.Product;
 
