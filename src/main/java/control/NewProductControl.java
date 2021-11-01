@@ -13,20 +13,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(value="/category")
-public class CategoryControl extends HttpServlet {
+@WebServlet(value="/newproduct")
+public class NewProductControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String cateID=req.getParameter("cid");
-        DAO dao= new DAO();
-        List<Product> listPC = dao.getProductCID(cateID);
+        DAO dao = new DAO();
         List<Product> list = dao.getTop6();
+        List<Product> listN = dao.getNewProduct();
         List<Category> listC = dao.getAllCategory();
-        req.setAttribute("listP",list);
-        req.setAttribute("listP",listPC);
-        req.setAttribute("listCC",listC);
-        req.setAttribute("tag",cateID);
 
+        req.setAttribute("listP", list);
+        req.setAttribute("listCC", listC);
+        req.setAttribute("listP", listN);
         RequestDispatcher rd= req.getRequestDispatcher("home.jsp");
         rd.forward(req,resp);
     }

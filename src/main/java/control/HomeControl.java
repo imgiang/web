@@ -6,7 +6,6 @@
 package control;
 
 import dao.DAO;
-
 import entity.Category;
 import entity.Product;
 import java.io.IOException;
@@ -32,7 +31,7 @@ public class HomeControl extends HttpServlet {
 
         RequestDispatcher rd = req.getRequestDispatcher("home.jsp");
         DAO dao = new DAO();
-        List<   Product> list = dao.getAllProduct();
+        List<   Product> list = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
 
         req.setAttribute("listP", list);

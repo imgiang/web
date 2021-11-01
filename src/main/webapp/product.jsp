@@ -323,7 +323,7 @@
         }
         /*giang*/
         .mau{
-height:800px;
+            height:800px;
             width: 200px;
         }
         body{
@@ -429,8 +429,105 @@ height:800px;
         .comment-widgets .comment-row:hover {
             background: rgba(0, 0, 0, 0.05)
         }
+        .product-grid{
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        .product-grid .product-image{
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .product-grid .product-image a.image{display: block; }
+        .product-grid .product-image img{
+            width: 100%;
+            height: auto;
+        }
+        .product-grid .product-discount-label{
+            color: #fff;
+            background: #A5BA8D;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 25px;
+            padding: 0 20px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+        .product-grid .product-links{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: absolute;
+            top: 10px;
+            right: -50px;
+            transition: all .5s ease 0s;
+        }
+        .product-grid:hover .product-links{ right: 10px; }
+        .product-grid .product-links li a{
+            color: #333;
+            background: transparent;
+            font-size: 17px;
+            line-height: 38px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid #333;
+            border-bottom: none;
+            display: block;
+            transition: all 0.3s;
+        }
+        .product-grid .product-links li:last-child a{ border-bottom: 1px solid #333; }
+        .product-grid .product-links li a:hover{
+            color: #fff;
+            background: #333;
+        }
+        .product-grid .add-to-cart{
+            background: #A5BA8D;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            width: 100%;
+            padding: 10px 26px;
+            position: absolute;
+            left: 0;
+            bottom: -60px;
+            transition: all 0.3s ease 0s;
+        }
+        .product-grid:hover .add-to-cart{ bottom: 0; }
+        .product-grid .add-to-cart:hover{ text-shadow: 4px 4px rgba(0,0,0,0.2); }
+        .product-grid .product-content{
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 0 0 5px rgba(0,0,0,0.1) inset;
+        }
+        .product-grid .title{
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin: 0 0 7px;
+        }
+        .product-grid .title a{
+            color: #777;
+            transition: all 0.3s ease 0s;
+        }
+        .product-grid .title a:hover{ color: #a5ba8d; }
+        .product-grid .price{
+            color: #0d0d0d;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .product-grid .price span{
+            color: #888;
+            font-size: 13px;
+            font-weight: 400;
+            text-decoration: line-through;
+        }
+        @media screen and (max-width: 990px){
+            .product-grid{ margin-bottom: 30px; }
+        }
     </style>
-    </head>
+</head>
 <body>
 <header>
     <jsp:include page="menu.jsp"></jsp:include>
@@ -440,10 +537,10 @@ height:800px;
     <div class="container mt-5" style="border-color:red">
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" style="width:40%">
                 <div id="slider" class="owl-carousel product-slider">
                     <div class="item">
-                        <img class="mau" src="${detail.image} " style="height:700px;" />
+                        <img class="mau" src="${detail.image} " style="height:700px;width:550px;" />
                     </div>
 
 
@@ -523,10 +620,38 @@ height:800px;
                             <input type="text" name="quantity" value="1" class="qty">
                             <div class="qtyplus">+</div>
                         </form>
-                        <a href="print" class="round-black-btn">Add to Cart</a>
+                        <%--                        <a href="print" class="round-black-btn">Add to Cart</a>--%>
+                        <a href="cart?id=${o.id}" class="round-black-btn">Add to Cart </a>
                     </div>
+
                 </div>
             </div>
+            <span>Similar items:</span>
+            <div class="row">
+                <c:forEach items="${listPP}" var="i">
+                <div class="col-md-3 col-sm-6" style="">
+                    <div class="product-grid">
+                        <div class="product-image">
+                    <a href="detail?pid=${i.id}&cateID=${i.cateID}">
+                    <img src="${i.image}" class="card-img-top"  alt="...">
+                    </a>
+                            <span class="product-discount-label">-23%</span>
+                            <ul class="product-links">
+                                <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                            <a href="" class="add-to-cart">Add to Cart</a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">${i.name}</a></h3>
+                            <div class="price">$${i.price} <span>$68.88</span></div>
+                        </div>
+                    </div>
+                </div>
+                </c:forEach>
+            </div>
+
         </div>
         <div class="product-info-tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -542,7 +667,7 @@ height:800px;
                     ${detail.description}
                 </div>
 
-<%--                review--%>
+                <%--                review--%>
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div class="review-heading">REVIEWS</div>
 
@@ -596,17 +721,17 @@ height:800px;
                             </div>
                         </div>
 
-                            <button type="submit" class="round-black-btn">Submit Review</button>
+                        <button type="submit" class="round-black-btn">Submit Review</button>
 
                     </form>
                 </div>
-<%--                review--%>
+                <%--                review--%>
             </div>
         </div>
     </div>
     </div>
 </main>
-<footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #096363">
+<footer>
     <jsp:include page="footer.jsp"></jsp:include>
 
 </footer>

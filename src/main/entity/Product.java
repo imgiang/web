@@ -1,4 +1,4 @@
-package entity;
+package entity.entity;
 
 
 public class Product {
@@ -8,34 +8,33 @@ public class Product {
     private double price;
     private String title;
     private String description;
-    private int cateID;
-    private String size;
     private int amount;
 
     public Product(){
 
 
     }
-
-    public Product(int id, String name, String image, double price, String title, String description,int cateID,String size,int amount) {
+    public Product(int id, String name, String image, double price, String title, String description) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;
         this.title = title;
         this.description = description;
-        this.cateID=cateID;
-        this.size=size;
+
+
+    }
+    public Product(int id, String name, String image, double price, String title, String description,int amount) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+        this.title = title;
+        this.description = description;
         this.amount=amount;
 
     }
-    public Product(int id, String name, double price, String title, String image) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.title = title;
-        this.image = image;
-    }
+
     public int getId() {
         return id;
     }
@@ -83,23 +82,6 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    public int getCateID() {
-        return cateID;
-    }
-
-    public void setCateID(int cateID) {
-        this.cateID = cateID;
-    }
-
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
     public int getAmount() {
         return amount;
     }

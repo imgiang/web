@@ -22,14 +22,10 @@
   <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
   <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
   <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-
-
-
   <%--    giang--%>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
   <%--    giang--%>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -246,20 +242,22 @@
     <section class="text-center mb-4">
 
       <!--Grid row-->
-      <div class="row wow fadeIn">
+      <div id="content" class="row wow fadeIn">
         <c:forEach items="${listP}" var="o">
           <!--Grid column-->
-          <div class="col-12 col-lg-4 col-md-6 mb-4">
+          <div class="pro col-12 col-lg-4 col-md-6 mb-4">
             <div class="product-grid">
               <div class="product-image">
-                <a href="detail?pid=${o.id}" class="image">
+                <a href="detail?pid=${o.id}&cateID=${o.cateID}" class="image">
                   <img class="pic-1" src="${o.image}">
                 </a>
                 <span class="product-sale-label">sale!</span>
                 <div class="price"> $${o.price} </div>
                   <%--                <a href="#" class="add-to-cart"> add to cart </a>--%>
-<%--                <a href="cart?id=${o.id}" class="add-to-cart"> add to cart </a>--%>
-                                  <a href="print" class="add-to-cart"> add to cart </a>
+                <a href="addtocart?pid=${o.id}" class="add-to-cart">
+                  Add to cart
+                </a>
+                  <%--                                  <a href="print" class="add-to-cart"> add to cart </a>--%>
               </div>
               <div class="product-content">
                 <h3 class="title"><a href="detail?pid=${o.id}">${o.name}</a></h3>
@@ -303,12 +301,16 @@
     <!--Pagination-->
 
     <!--Pagination-->
+    <div class="d-grid gap-2">
+      <button onclick="loadmore()" class="" style="background-color: #8b8b89" type="button">Xem thêm</button>
 
+    </div>
   </div>
+
 </main>
 
 
-<footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #096363">
+<footer >
   <jsp:include page="footer.jsp"></jsp:include>
 
 </footer>
@@ -329,7 +331,27 @@
 <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 <script src="https://kit.fontawesome.com/cb0487757c.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+  function loadmore(){
+    var amount=document.getElementsByClassName("pro").length;
+    $.ajax({
+
+      url:"/load",//lấy đường dẫn
+      type: 'GET',  // http method
+     data: { exist: amount },  // lấy số lượng sản phẩm đã cps
+      success: function (data) {
+      var row=document.getElementById("content");
+      row.innerHTML += data; //lấy dữ liệu đưa vào id content
+      },
+      error: function (xhr) {
+
+      }
+    });
+
+  }
+</script>
 
 
 </body>

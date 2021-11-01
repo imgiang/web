@@ -13,33 +13,61 @@
 <%--giang--%>
 <fmt:setLocale value="${sessionScope.LANG}"/>
 <fmt:setBundle basename="mlang"/>
-<nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090;height:60px;" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <%--    giang--%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <%--    giang--%>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>
+    .active{
+        display: inline;
+        border-bottom: 3px solid #f9dd94;
+    }
+     .btn:hover {
+        background-color: #666;
+        color: white;
+    }
+</style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090;height:70px;" >
     <div class="container" >
         <a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#afafd0 ;font-size:20px;" aria-current="page" href="#"><fmt:message key="a.home" /></a>
+            <ul id="myDiv" class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class=" nav-item ">
+                    <a class="btn active nav-link" style="color:#afafd0 ;font-size:20px;" aria-current="page" href="#"><fmt:message key="a.home" /></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#afafd0 ;font-size:20px;" href="#"><fmt:message key="a.hot" /></a>
+                <li class=" nav-item">
+                    <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/hotproduct"><fmt:message key="a.hot" /></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="color:#afafd0 ;font-size:20px;" href="#"><fmt:message key="a.trending"/></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="color:#afafd0 ;font-size:20px;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       Genres
+                <li class=" nav-item ">
+                    <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/goodprice"  role="button"  aria-expanded="false">
+                        Sản phẩm giá tốt
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+
+                </li>
+                <li class=" nav-item ">
+                    <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/newproduct" role="button" aria-expanded="false">
+                       Sản phẩm mới
+                    </a>
+
                 </li>
 
             </ul>
@@ -187,5 +215,18 @@
     // function handleSignedInUser(user) {
     //     document.write("<pre>" + JSON.stringify(user, undefined, 2) + "</pre>")
     // }
+</script>
+
+<script>
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("myDiv");
+    var btns = header.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
 </script>
 <%--giang--%>
