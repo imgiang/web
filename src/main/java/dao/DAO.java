@@ -1,10 +1,7 @@
 package dao;
 
 
-import entity.Category;
-import entity.Comment;
-import entity.Customer;
-import entity.Product;
+import entity.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -58,7 +55,25 @@ public class DAO {
         return list;
     }
 
-
+    public List<Product> getTop3() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from  product order by id limit 5;";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
 
     public List<Category> getAllCategory() {
         List<Category> list = new ArrayList<>();
@@ -167,6 +182,26 @@ public class DAO {
         }
         return list;
     }
+    public List<Product> getTop() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from  product order by id limit 8;";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
     public List<Comment> getComment() {
         List<Comment> list = new ArrayList<>();
         String query = "select * from tcomment";
@@ -203,28 +238,62 @@ public class DAO {
         }
         return null;
     }
-    public Product getProduct(String txt) {
+//    làm cart
+    public Product getProduct(int pid) {
         String query = "select * from product where id = ?";
-        List<Product> list = new ArrayList<>();
         try {
-            conn = new DAO().getConnection();
+            conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setString(1, txt);
+            ps.setInt(1, pid);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Product(rs.getInt(1),
                         rs.getString(2),
-                        rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6),
-                        1);
+                        rs.getString(3));
             }
         } catch (Exception e) {
         }
         return null;
     }
-
+    public void addToCart(int aid, int pid, int amount) {
+        String query = "insert into cart values(?,?,?)";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, aid);
+            ps.setInt(2, pid);
+            ps.setInt(3, amount);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    public void addToProduct(String name, String image, String price, String title, String cateid, int sid) {
+        String query = "insert into product(name,image,price,title, cateid,sell_id) values(?,?,?,?,?,?)";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setString(3, price);
+            ps.setString(4, title);
+            ps.setString(5, cateid);
+            ps.setInt(6, sid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    public void deleteProduct(int pid) {
+        String query = "delete from product where id = ?";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, pid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
 //
 //    public Account login(String user, String pass) {
 //        String query = "select * from account\n"
@@ -301,52 +370,6 @@ public class DAO {
             conn = new DAO().getConnection();
         }
     }
-    public List<Customer> getCustomer(String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd) {
-        List<Customer> list = new ArrayList<>();
-        String query = "select * from customer";
-
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                while (rs.next()) {
-                    list.add(new Customer(rs.getString(1),
-                            rs.getString(2),
-                            rs.getString(3),
-                            rs.getString(4),
-                            rs.getString(5),
-                            rs.getString(6))
-                            );
-                }
-            }
-        } catch (Exception e) {
-        }
-        return list;
-    }
-
-
-    public Customer checkout(String name, String gioitinh, String diachi,
-                             String dienthoai, String email, String cmnd) {
-        String query = "insert into customer(name,gioitinh,diachi,dienthoai,email,cmnd) values(?,?,?,?,?,?)";
-        try {
-            conn = new DAO().getConnection();
-            ps = conn.prepareStatement(query);
-            ps.setString(1,name);
-            ps.setString(2,gioitinh);
-            ps.setString(3,diachi);
-            ps.setString(4,dienthoai);
-            ps.setString(5,email);
-            ps.setString(6,cmnd);
-
-
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-;
-return null;
-
-    }
 
     public void editProduct(String name, String image, String price,
                             String title, String description, String category, String pid) {
@@ -372,6 +395,108 @@ return null;
         } catch (Exception e) {
         }
     }
+    public List<Customer> getCustomer(String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd) {
+        List<Customer> list = new ArrayList<>();
+        String query = "select * from customer";
+
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                while (rs.next()) {
+                    list.add(new Customer(rs.getString(1),
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getString(4),
+                            rs.getString(5),
+                            rs.getString(6))
+                    );
+                }
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public Customer checkout(String name, String gioitinh, String diachi,
+                             String dienthoai, String email, String cmnd) {
+        String query = "insert into customer(name,gioitinh,diachi,dienthoai,email,cmnd) values(?,?,?,?,?,?)";
+        try {
+            conn = new DAO().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1,name);
+            ps.setString(2,gioitinh);
+            ps.setString(3,diachi);
+            ps.setString(4,dienthoai);
+            ps.setString(5,email);
+            ps.setString(6,cmnd);
+
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        ;
+        return null;
+
+    }
+    public Customer checkCustomerExist(String cmnd){
+        String query = "select * from customer\n"
+                + "where cmnd = ?\n";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cmnd);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Customer(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+
+
+    }
+
+    public Account checkAccountExist(String user) {
+        String query = "select * from account\n"
+                + "where user = ?\n";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Account(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getInt(5));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+    public void singup(String user, String pass) {
+        String query = " insert into account" +
+                "(user,pass,isSell,isAdmin) " +
+                "values(?,?,0,0);";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+
 
     public static void main(String[] args){
         try{
