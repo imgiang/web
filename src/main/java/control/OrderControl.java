@@ -22,15 +22,7 @@ public class OrderControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Cookie arr[] = request.getCookies();
         List<Product> list = new ArrayList<>();
-        DAO dao = new DAO();
-        for (Cookie o : arr) {
-            if (o.getName().equals("id")) {
-                String txt[] = o.getValue().split(",");
-                for (String s : txt) {
-                    list.add(dao.getProduct(s));
-                }
-            }
-        }
+
         for (int i = 0; i < list.size(); i++) {
             int count = 1;
             for (int j = i+1; j < list.size(); j++) {
@@ -46,7 +38,7 @@ public class OrderControl extends HttpServlet {
             o.setMaxAge(0);
             response.addCookie(o);
         }
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("checkout.jsp");
     }
 
 

@@ -8,6 +8,9 @@ public class Product {
     private double price;
     private String title;
     private String description;
+    private String size;
+    private String cateID;
+    private String sell_ID;
     private int amount;
 
     public Product(){
@@ -41,7 +44,19 @@ public class Product {
         this.amount=amount;
 
     }
+    public Product(int id, String name, String image, double price, String title, String description,String size,String cateID,String sell_ID,int amount) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+        this.title = title;
+        this.description = description;
+        this.size = size;
+        this.cateID= cateID;
+        this.sell_ID = sell_ID;
+        this.amount=amount;
 
+    }
     public int getId() {
         return id;
     }

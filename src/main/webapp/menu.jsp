@@ -44,6 +44,9 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="managerProduct">Manager</a>
+                </li>
 
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >

@@ -1,6 +1,7 @@
 package entity;
 
 public class Customer {
+    private int ProductID;
     private String name;
     private String gioitinh;
     private String diachi;
@@ -9,6 +10,15 @@ public class Customer {
     private String cmnd;
 
     public Customer(String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd){
+        this.name =name;
+        this.gioitinh=gioitinh;
+        this.diachi=diachi;
+        this.dienthoai=dienthoai;
+        this.email=email;
+        this.cmnd=cmnd;
+    }
+    public Customer(int ProductID,String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd){
+        this.ProductID=ProductID;
         this.name =name;
         this.gioitinh=gioitinh;
         this.diachi=diachi;

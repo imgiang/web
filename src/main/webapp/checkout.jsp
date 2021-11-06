@@ -203,7 +203,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label for="kh_ten">Họ tên</label>
-                            <input name="kh_ten" type="text"  id="kh_ten" class="form-control" placeholder="VD: Nguyễn Thành Công"
+                            <input name="name" type="text"  id="kh_ten" class="form-control" placeholder="VD: Nguyễn Thành Công"
                                    required="" autofocus="">
                             <%--                            <input name="user" type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="">--%>
                         </div>
@@ -300,5 +300,4 @@
 </body>
 
 </html>
-
 

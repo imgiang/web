@@ -98,15 +98,21 @@
 package control;
 
 import dao.DAO;
+
+import entity.Cart;
 import entity.Customer;
 
+import javax.imageio.metadata.IIOMetadataNode;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+
 @WebServlet("/checkout")
 public class CheckOutControl extends HttpServlet {
         //    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -125,8 +131,16 @@ public class CheckOutControl extends HttpServlet {
                 Customer a=dao.checkCustomerExist(cmnd);
                 if(a == null){
                         //dc chekout
+                        HttpSession session = request.getSession();
+                        List<Cart> list = (List<Cart>) session.getAttribute("cart");
+
+//                        for (Cart o : list) {
+//                                dao.addToCart(a.getUid(), o.getPid(), o.getAmount());
+//                        }
+                        session.removeAttribute("cart");
+
                         dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
-                        response.sendRedirect("home.jsp");
+                        response.sendRedirect("home");
                 }else{
                         //day ve trang checkout.jsp
                         response.sendRedirect("checkout.jsp");

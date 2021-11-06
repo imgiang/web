@@ -1,2 +1,4 @@
-package control;public class LoginControl {
+package control;
+
+public class LoginControl {
 }
