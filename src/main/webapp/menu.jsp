@@ -32,16 +32,16 @@
     <%--    giang--%>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-<style>
-    .active{
-        display: inline;
-        border-bottom: 3px solid #f9dd94;
-    }
-     .btn:hover {
-        background-color: #666;
-        color: white;
-    }
-</style>
+    <style>
+        .active{
+            display: inline;
+            border-bottom: 3px solid #f9dd94;
+        }
+        .btn:hover {
+            background-color: #666;
+            color: white;
+        }
+    </style>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090;height:70px;" >
     <div class="container" >
@@ -65,11 +65,13 @@
                 </li>
                 <li class=" nav-item ">
                     <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/newproduct" role="button" aria-expanded="false">
-                       Sản phẩm mới
+                        Sản phẩm mới
                     </a>
 
                 </li>
-
+                <li class="nav-item active">
+                    <a class="nav-link" href="managerProduct">Manager</a>
+                </li>
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
                 <span><a class="nav-link" href="print"><img style="height:35px;" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" ></a></span>

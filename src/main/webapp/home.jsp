@@ -340,10 +340,10 @@
 
       url:"/load",//lấy đường dẫn
       type: 'GET',  // http method
-     data: { exist: amount },  // lấy số lượng sản phẩm đã cps
+      data: { exist: amount },  // lấy số lượng sản phẩm đã cps
       success: function (data) {
-      var row=document.getElementById("content");
-      row.innerHTML += data; //lấy dữ liệu đưa vào id content
+        var row=document.getElementById("content");
+        row.innerHTML += data; //lấy dữ liệu đưa vào id content
       },
       error: function (xhr) {
 

@@ -126,7 +126,7 @@ public class CheckOutControl extends HttpServlet {
                 if(a == null){
                         //dc chekout
                         dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
-                        response.sendRedirect("home");
+                        response.sendRedirect("home.jsp");
                 }else{
                         //day ve trang checkout.jsp
                         response.sendRedirect("checkout.jsp");

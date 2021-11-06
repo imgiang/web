@@ -119,10 +119,7 @@
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
     <%--    giang--%>
@@ -133,86 +130,7 @@
     <%--    giang--%>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-<style>
-    body {
-        font-family: 'Varela Round', sans-serif;
-    }
-    .modal-confirm {
-        color: #636363;
-        width: 325px;
-        font-size: 14px;
-    }
-    .modal-confirm .modal-content {
-        padding: 20px;
-        border-radius: 5px;
-        border: none;
-    }
-    .modal-confirm .modal-header {
-        border-bottom: none;
-        position: relative;
-    }
-    .modal-confirm h4 {
-        text-align: center;
-        font-size: 26px;
-        margin: 30px 0 -15px;
-    }
-    .modal-confirm .form-control, .modal-confirm .btn {
-        min-height: 40px;
-        border-radius: 3px;
-    }
-    .modal-confirm .close {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-    }
-    .modal-confirm .modal-footer {
-        border: none;
-        text-align: center;
-        border-radius: 5px;
-        font-size: 13px;
-    }
-    .modal-confirm .icon-box {
-        color: #fff;
-        position: absolute;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        top: -70px;
-        width: 95px;
-        height: 95px;
-        border-radius: 50%;
-        z-index: 9;
-        background: #82ce34;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-    }
-    .modal-confirm .icon-box i {
-        font-size: 58px;
-        position: relative;
-        top: 3px;
-    }
-    .modal-confirm.modal-dialog {
-        margin-top: 80px;
-    }
-    .modal-confirm .btn {
-        color: #fff;
-        border-radius: 4px;
-        background: #82ce34;
-        text-decoration: none;
-        transition: all 0.4s;
-        line-height: normal;
-        border: none;
-    }
-    .modal-confirm .btn:hover, .modal-confirm  {
-        background: #6fb32b;
-        outline: none;
-    }
-    .trigger-btn {
-        display: inline-block;
-        margin: 100px auto;
-    }
-</style>
+
 
 </head>
 
@@ -342,30 +260,7 @@
                     </div>
                 </div>
                 <hr class="mb-4">
-                <div class="text-center">
-                    <!-- Button HTML (to Trigger Modal) -->
-                    <a href="#myModal" class="trigger-btn" style="color:blue;background-color:orange;font-size:15px;margin-top: 6px;font-size:30px;color:white" data-toggle="modal">Đặt hàng</a>
-                </div>
-
-                <!-- Modal HTML -->
-                <div id="myModal" class="modal fade">
-                    <div class="modal-dialog modal-confirm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="icon-box">
-                                    <i class="material-icons">&#xE876;</i>
-                                </div>
-                                <h4 class="modal-title w-100">Chúc mừng!</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-center">Bạn đã đặt hàng thành công</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-success btn-block" type="submit" name="btnDatHang">Đặt hàng</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang">Đặt hàng</button>
             </div>
     </div>
     </form>
@@ -393,8 +288,7 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/popperjs/popper.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 <!-- Custom script - Các file js do mình tự viết -->
 <script src="../assets/js/app.js"></script>
 <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
