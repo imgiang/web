@@ -70,11 +70,12 @@
 
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="managerProduct">Manager</a>
+<%--                    <a class="nav-link" href="managerProduct">Manager</a>--%>
+    <a class="nav-link" href="MenuManager.jsp">Manager</a>
                 </li>
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
-                <span><a class="nav-link" href="print"><img style="height:35px;" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" ></a></span>
+                <span><a class="nav-link" href="addtocart"><img style="height:35px;" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" ></a></span>
 
 
                 <div class="btn-group ms-3">

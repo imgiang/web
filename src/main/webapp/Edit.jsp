@@ -287,7 +287,10 @@
                         <label>Description</label>
                         <input type="text" class="form-control" required name="description" value="${description}">
                     </div>
-
+                    <div class="form-group">
+                        <label>Size </label>
+                        <input type="text" class="form-control" required name="title" value="${size}">
+                    </div>
 <%--                    <div class="form-group">--%>
 <%--                        <label>Category</label>--%>
 <%--                        <select name="CategoryID" class="form-control" required>--%>
@@ -304,7 +307,14 @@
 <%--                            </c:forEach>--%>
 <%--                        </select>--%>
 <%--                    </div>--%>
-
+                    <div class="form-group">
+                        <label>CateID</label>
+                        <input type="text" class="form-control" required name="title" value="${cateID}">
+                    </div>
+                    <div class="form-group">
+                        <label>SellID </label>
+                        <input type="text" class="form-control" required name="title" value="${sell_ID}">
+                    </div>
                     <div class="form-group">
                         <label>Amount</label>
                         <input type="text" class="form-control" required name="amount" value="${amount}">

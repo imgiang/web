@@ -77,10 +77,13 @@ public class AddProduct extends HttpServlet {
         String image = request.getParameter("image");
         String price = request.getParameter("price");
         String title = request.getParameter("title");
-        String cateid = request.getParameter("cateid");
-        String sell_id= request.getParameter("sell_id");
+        String cateID = request.getParameter("cateID");
+        String sell_ID= request.getParameter("sell_ID");
+        String description=request.getParameter("description");
+        String size=request.getParameter("size");
+        String amount=request.getParameter("amount");
         DAO dao = new DAO();
-        dao.addToProduct(name,image,price,title, cateid,sell_id);
+        dao.addToProduct(name,image,price,title,description,size, cateID,sell_ID,amount);
         response.sendRedirect("managerProduct");
     }
 
