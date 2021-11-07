@@ -373,7 +373,7 @@
                     <tr>
                         <td>${o.id}</td>
                         <td>${o.name}</td>
-                        <td><img src="${o.imageLink}" style="height: 100px"></td>
+                        <td><img src="${o.image}" style="height: 100px"></td>
                         <td>${o.priceWithDot} VND</td>
                         <td>
                             <!--Link to GET in EditControl-->
