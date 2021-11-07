@@ -715,6 +715,10 @@
                         <input type="text" class="form-control" required name="name">
                     </div>
                     <div class="form-group">
+                        <label>Title </label>
+                        <input type="text" class="form-control" required name="Title">
+                    </div>
+                    <div class="form-group">
                         <label>Description</label>
                         <input type="text" class="form-control" required name="description">
                     </div>
@@ -725,6 +729,10 @@
                     <div class="form-group">
                         <label>Image </label>
                         <input type="text" class="form-control" required name="imageLink">
+                    </div>
+                    <div class="form-group">
+                        <label>Size </label>
+                        <input type="text" class="form-control" required name="size">
                     </div>
 <%--                    <div class="form-group">--%>
 <%--                        <label>Category</label>--%>

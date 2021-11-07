@@ -93,6 +93,8 @@ public class AddToCart extends HttpServlet {
         }
         request.setAttribute("listP", listP);
         request.setAttribute("total", total);
+        request.setAttribute("vat", 0.1 * total);
+        request.setAttribute("sum", 1.1 * total);
         request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 

@@ -33,14 +33,14 @@ public class AddControl extends HttpServlet {
         String price = request.getParameter("price");
         String title = request.getParameter("title");
         String  image= request.getParameter("image");
-//        String size =request.getParameter("size");
+        String size =request.getParameter("size");
         String cateID = request.getParameter("cateID");
         String sell_ID = request.getParameter("sell_ID");
-//        Integer amount = request.getParameter("amount");
+        String amount = request.getParameter("amount");
         //Add data to Database
         DAO dao = new DAO();
-        dao.add(id,name,image,price,title,description,cateID,sell_ID);
-        response.sendRedirect("manager");
+        dao.add(id,name,image,price,title,description,size,cateID,sell_ID,amount);
+        response.sendRedirect("managerProduct");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

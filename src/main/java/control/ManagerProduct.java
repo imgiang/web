@@ -58,7 +58,7 @@ public class ManagerProduct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         DAO dao = new DAO();
-        List<Product> listP = dao.getTop6();
+        List<Product> listP = dao.getAllProduct();
 
         request.setAttribute("listP", listP);
         request.setAttribute("list", listP);

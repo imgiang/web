@@ -30,7 +30,7 @@ public class DeleteControl extends HttpServlet {
         //Chuyển về trang HomeControl (có đường dẫn là /home) để load lại dữ liệu 
         //Mình ko cần câu lệnh này: request.getRequestDispatcher("home").forward(request,response); => Vì mình chỉ cần chuyển trang thôi, ko cần mang theo dữ liệu
 
-        response.sendRedirect("manager"); //Chỉ chuyển trang
+        response.sendRedirect("managerProduct"); //Chỉ chuyển trang
         //request.getRequestDispatcher("home").forward(request,response); //Mang theo dữ liệu
     }
 

@@ -35,10 +35,33 @@ public class DAO {
 
 
 
+
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
 
+    public List<Product> getAllProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getString(9),
+                        rs.getInt(10)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
     public List<Product> getTop6() {
         List<Product> list = new ArrayList<>();
         String query = "select * from product limit 6";
@@ -372,26 +395,26 @@ public class DAO {
 
 
 
-    public void insertProduct(String name, String image, String price,
-                              String title, String description, String category, int sid) {
-        String query = "INSERT into product \n"
-                + "(name, image, price, title, description, cateID, sell_ID)\n"
-                + "VALUES(?,?,?,?,?,?,?)";
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setString(2, image);
-            ps.setString(3, price);
-            ps.setString(4, title);
-            ps.setString(5, description);
-            ps.setString(6, category);
-            ps.setInt(7, sid);
-            ps.executeUpdate();
-        } catch (Exception e) {
-            conn = new DAO().getConnection();
-        }
-    }
+//    public void insertProduct(String name, String image, String price,
+//                              String title, String description, String category, int sid) {
+//        String query = "INSERT into product \n"
+//                + "(name, image, price, title, description, cateID, sell_ID)\n"
+//                + "VALUES(?,?,?,?,?,?,?)";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, name);
+//            ps.setString(2, image);
+//            ps.setString(3, price);
+//            ps.setString(4, title);
+//            ps.setString(5, description);
+//            ps.setString(6, category);
+//            ps.setInt(7, sid);
+//            ps.executeUpdate();
+//        } catch (Exception e) {
+//            conn = new DAO().getConnection();
+//        }
+//    }
     public List<Customer> getCustomer() {
         List<Customer> list = new ArrayList<>();
         String query = "select * from customer";
@@ -462,14 +485,17 @@ public class DAO {
 
     }
     public void editProduct(String name, String image, String price,
-                            String title, String description, String category, String pid) {
+                            String title, String description, String size,String  cateID,String sell_ID,String amount,String id) {
         String query = "update product\n"
                 + "set name = ?,\n"
                 + "image = ?,\n"
                 + "price = ?,\n"
                 + "title = ?,\n"
                 + "description = ?,\n"
-                + "cateID = ?\n"
+                + "size = ?,\n"
+                + "cateID = ?,\n"
+                + "sell_ID = ?,\n"
+                + "amount = ?\n"
                 + "where id = ?";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
@@ -479,8 +505,11 @@ public class DAO {
             ps.setString(3, price);
             ps.setString(4, title);
             ps.setString(5, description);
-            ps.setString(6, category);
-            ps.setString(7, pid);
+            ps.setString(6, size);
+            ps.setString(7, cateID);
+            ps.setString(8, size);
+            ps.setString(9, amount);
+            ps.setString(10, id);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -515,17 +544,20 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    public void addToProduct(String name, String image, String price, String title, String cateid, String sell_id) {
-        String query = "insert into product(name,image,price,title, cateid,sell_id) values(?,?,?,?,?,?)";
+    public void addToProduct(String name, String image, String price,
+                             String title, String description, String size,String  cateID,String sell_ID,String amount) {
+        String query = "insert into product(name,image,price,description,title, cateid,sell_id,amount) values(?,?,?,?,?,?,?,?)";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, name);
             ps.setString(2, image);
             ps.setString(3, price);
-            ps.setString(4, title);
-            ps.setString(5, cateid);
-            ps.setString(6,sell_id);
+            ps.setString(4, description);
+            ps.setString(5, title);
+            ps.setString(6, size);
+            ps.setString(7, cateID);
+            ps.setString(8,sell_ID);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -554,63 +586,65 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    public void edit(String id, String name,  String image,String price,String title,String description,  String cateID, String sell_ID) {
-        String query = "UPDATE Product\n"
-                + "SET name = ?,\n"
+    public void edit(String name, String image, String price,
+                     String title, String description, String size,String  cateID,String sell_ID,String amount,String id) {
+        String query = "update product\n"
+                + "set name = ?,\n"
                 + "image = ?,\n"
-                + "Price = ?,\n"
+                + "price = ?,\n"
                 + "title = ?,\n"
-                + "Description = ?,\n"
-
-
-                + "CateID = ?,\n"
-                + "Sell_ID = ?"
-//                + "Amount = ?\n"
-                + "WHERE ID = ?";
+                + "description = ?,\n"
+                + "size = ?,\n"
+                + "cateID = ?,\n"
+                + "sell_ID = ?,\n"
+                + "amount = ?\n"
+                + "where id = ?";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            //Set dữ liệu vào dấu ?
-
-            ps.setString(1, name);
-            ps.setString(2, description);
-            ps.setString(3, price);
-            ps.setString(4, title);
-            ps.setString(4, image);
-            ps.setString(5, cateID);
-            ps.setString(6, sell_ID);
-
-            ps.setString(8, id);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-    }
-
-    public void add(String id, String name,  String image,String price,String title,String description , String cateID, String sell_ID) {
-        String query = "INSERT INTO Product VALUES (?, ?, ?, ?, ?, ?, ?);";
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            //Set dữ liệu vào dấu ?
             ps.setString(1, name);
             ps.setString(2, image);
             ps.setString(3, price);
             ps.setString(4, title);
             ps.setString(5, description);
-//            ps.setString(5, size);
-
-            ps.setString(6, cateID);
-            ps.setString(7,sell_ID);
-//            ps.setInt(8, amount);
+            ps.setString(6, size);
+            ps.setString(7, cateID);
+            ps.setString(8, size);
+            ps.setString(9, amount);
+            ps.setString(10, id);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
-    public static void main(String[] args){
-        try{
-            System.out.println(new DAO().getConnection());
-        }catch (Exception e){
+
+    public void add(String id,String name, String image, String price,
+                    String title, String description, String size,String  cateID,String sell_ID,String amount) {
+        String query = "insert into product(name,image,price,description,title, cateid,sell_id,amount) values(?,?,?,?,?,?,?,?,0)";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ps.setString(2, image);
+            ps.setString(3, price);
+            ps.setString(4, description);
+            ps.setString(5, title);
+            ps.setString(6, size);
+            ps.setString(7, cateID);
+            ps.setString(8,sell_ID);
+            ps.executeUpdate();
+        } catch (Exception e) {
         }
     }
+    public static void main(String[] args) {
+        DAO dao = new DAO();
+        List<Product> list = dao.getTop6();
+        List<Category> listC = dao.getAllCategory();
+
+        for (Product o : list) {
+            System.out.println(o);
+        }
+    }
+
 }
+
 

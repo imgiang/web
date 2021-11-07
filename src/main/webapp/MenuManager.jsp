@@ -316,29 +316,19 @@
         </button>
 
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link" href="home">Home</a>
+            <li class="list-group-item active">
+                <a class="text-light" href="home">Manager</a>
             </li>
-<%--            <c:if test="${sessionScope.acc == null}">--%>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-<%--            </c:if>--%>
-<%--            <c:if test = "${sessionScope.acc != null}">--%>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="login">Hello ${sessionScope.acc.user}</a>
-                </li>
-<%--                <c:if test="${sessionScope.acc.isSell == 1}">--%>
-                    <li class="nav-item">
-                        <a class="nav-link" href="manager">Manager Product</a>
-                    </li>
-<%--                </c:if>--%>
-<%--                <c:if test="${sessionScope.acc.isAdmin == 1}">--%>
-                    <li class="nav-item">
-                        <a class="nav-link" href="accountManager">Manager Account</a>
-                    </li>
-<%--                </c:if>--%>
-<%--            </c:if>--%>
+            <li class="list-group-item">
+                <a href="managerProduct">Manager Product</a>
+            </li>
+            <li class="list-group-item">
+                <a href="managerCustomer">Manager Customer</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Manager Bill</a>
+            </li>
+
 
             <li class="nav-item">&nbsp;
             </li>

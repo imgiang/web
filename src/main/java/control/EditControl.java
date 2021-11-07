@@ -82,7 +82,7 @@ public class EditControl extends HttpServlet {
         String price = request.getParameter("price");
         String title = request.getParameter("title");
         String  image= request.getParameter("image");
-//        String size =request.getParameter("size");
+        String size =request.getParameter("size");
         String cateID = request.getParameter("cateID");
         String sell_ID = request.getParameter("sell_ID");
         String amount = request.getParameter("amount");
@@ -90,8 +90,8 @@ public class EditControl extends HttpServlet {
         //Bước 2: set data to ProductDAO
 
         DAO dao=new DAO();
-        dao.edit( id,name,image,price,title,description,cateID,sell_ID);
-        response.sendRedirect("manager");
+        dao.edit( id,name,image,price,title,description,size,cateID,sell_ID,amount);
+        response.sendRedirect("managerProduct");
     }
 
     /**
