@@ -29,13 +29,13 @@ public class AddControl extends HttpServlet {
         //Get data from JSP
         String id = request.getParameter("id");
         String name = request.getParameter("name"); //Get by name
-        String description = request.getParameter("description");
+        String  image= request.getParameter("image");
         String price = request.getParameter("price");
         String title = request.getParameter("title");
-        String  image= request.getParameter("image");
-        String size =request.getParameter("size");
+        String description = request.getParameter("description");
         String cateID = request.getParameter("cateID");
         String sell_ID = request.getParameter("sell_ID");
+        String size =request.getParameter("size");
         String amount = request.getParameter("amount");
         //Add data to Database
         DAO dao = new DAO();

@@ -1,6 +1,7 @@
 package entity;
 
 public class Customer {
+    private int id;
     private String name;
     private String gioitinh;
     private String diachi;
@@ -16,7 +17,15 @@ public class Customer {
         this.email=email;
         this.cmnd=cmnd;
     }
-
+    public Customer(int id,String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd){
+        this.id=id;
+        this.name =name;
+        this.gioitinh=gioitinh;
+        this.diachi=diachi;
+        this.dienthoai=dienthoai;
+        this.email=email;
+        this.cmnd=cmnd;
+    }
 
 
 
@@ -67,6 +76,14 @@ public class Customer {
 
     public void setCmnd(String cmnd) {
         this.cmnd = cmnd;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

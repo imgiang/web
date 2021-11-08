@@ -47,7 +47,7 @@ public class EditControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String id = request.getParameter("ProductID");
+        String id = request.getParameter("ID");
 
 
 //        request.setAttribute("id", p.getId());
@@ -78,20 +78,19 @@ public class EditControl extends HttpServlet {
         //Bước 1: get data from jsp
         String id = request.getParameter("id");
         String name = request.getParameter("name"); //Get by name
-        String description = request.getParameter("description");
+        String  image= request.getParameter("image");
         String price = request.getParameter("price");
         String title = request.getParameter("title");
-        String  image= request.getParameter("image");
-        String size =request.getParameter("size");
+        String description = request.getParameter("description");
         String cateID = request.getParameter("cateID");
         String sell_ID = request.getParameter("sell_ID");
+        String size =request.getParameter("size");
         String amount = request.getParameter("amount");
-
         //Bước 2: set data to ProductDAO
 
         DAO dao=new DAO();
         dao.edit( id,name,image,price,title,description,size,cateID,sell_ID,amount);
-        response.sendRedirect("managerProduct");
+        response.sendRedirect("Edit.jsp");
     }
 
     /**

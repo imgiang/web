@@ -51,10 +51,20 @@
             <form class="form-inline" style="margin-top: 1px; margin-bottom: 1px;weight:70px;" action="search" method="get">
                 <div class="md-form my-0">
                     <input class="form-control mr-sm-2" value="${txtS}" name="txt" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+<%--                    <button class="btn btn-lg btn-success" type="submit">Search</button>--%>
                 </div>
 
             </form>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filter
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" formaction="descending" formmethod="get" type="button"><a href="descending">Price Descending</a></button>
+                    <button class="dropdown-item" formaction="ascending" formmethod="get" type="button"><a href="ascending">Price Ascending</a></button>
+                </div>
+            </div>
         </div>
         <!-- Collapsible content -->
 

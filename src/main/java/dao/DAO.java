@@ -2,10 +2,7 @@
 package dao;
 
 
-import entity.Category;
-import entity.Comment;
-import entity.Customer;
-import entity.Product;
+import entity.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,7 +22,7 @@ public class DAO {
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothes", "root", "Thuhuong01");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/web", "root", "tung03102001");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -425,14 +422,63 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 while (rs.next()) {
-                    list.add(new Customer(rs.getString(1),
+                    list.add(new Customer(
+                            rs.getInt(1),
                             rs.getString(2),
                             rs.getString(3),
                             rs.getString(4),
                             rs.getString(5),
-                            rs.getString(6))
+                            rs.getString(6),
+                            rs.getString(7))
                     );
                 }
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public List<Product> DescendingProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product ORDER BY price DESC";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+
+                        rs.getString(9),
+                        rs.getInt(10)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    public List<Product> AscendingProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product ORDER BY price ASC";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+
+                        rs.getString(9),
+                        rs.getInt(10)));
             }
         } catch (Exception e) {
         }
@@ -609,7 +655,7 @@ public class DAO {
             ps.setString(5, description);
             ps.setString(6, size);
             ps.setString(7, cateID);
-            ps.setString(8, size);
+            ps.setString(8, sell_ID);
             ps.setString(9, amount);
             ps.setString(10, id);
             ps.executeUpdate();
@@ -635,6 +681,54 @@ public class DAO {
         } catch (Exception e) {
         }
     }
+
+    public Product getProductByID(String id) {
+        String query = "select * from product\n"
+                + "where id = ?";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                        rs.getString(9),
+                        rs.getInt(10));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+    public Account login(String user, String pass) {
+        String query = "select * from account\n"
+                + "where user = ?\n"
+                + "and pass = ?";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Account(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getInt(5));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         DAO dao = new DAO();
         List<Product> list = dao.getTop6();

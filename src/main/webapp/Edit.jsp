@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="image/faviconLogo.png" />
-    <title>Fresh fruit</title>
+    <title>Shop H&T&G</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -264,32 +264,32 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>ID</label>
-                        <input type="text"  class="form-control" name="id" value="${id}" readonly>
+                        <input value="${detail.id}" name="id" type="text" class="form-control" readonly required>
                     </div>
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" required name="name" value="${name}">
+                        <input value="${detail.name}" name="name" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Image </label>
-                        <input type="text" class="form-control" required name="imageLink" value="${image}">
+                        <label>Image</label>
+                        <input value="${detail.image}" name="image" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="text" class="form-control" required name="price" value="${price}">
+                        <input value="${detail.price}" name="price" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Title </label>
-                        <input type="text" class="form-control" required name="title" value="${title}">
+                        <label>Title</label>
+                        <textarea name="title" class="form-control" required>${detail.title}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input type="text" class="form-control" required name="description" value="${description}">
+                        <textarea name="description" class="form-control" required>${detail.description}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Size </label>
-                        <input type="text" class="form-control" required name="title" value="${size}">
+                        <input value="${detail.size}" name="size" type="text" class="form-control" required>
                     </div>
 <%--                    <div class="form-group">--%>
 <%--                        <label>Category</label>--%>
@@ -309,15 +309,22 @@
 <%--                    </div>--%>
                     <div class="form-group">
                         <label>CateID</label>
-                        <input type="text" class="form-control" required name="title" value="${cateID}">
+                        <select name="cateID" class="form-control " style="width:70px;">
+                            <option> 1 </option>
+                            <option> 2 </option>
+                            <option> 3 </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>SellID </label>
-                        <input type="text" class="form-control" required name="title" value="${sell_ID}">
+                        <select name="sell_ID" class="form-control " style="width:70px;">
+                            <option> 1 </option>
+                            <option> 2 </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Amount</label>
-                        <input type="text" class="form-control" required name="amount" value="${amount}">
+                        <input type="text" class="form-control" required name="amount" value="${detail.amount}">
                     </div>
                 </div>
                 <div class="modal-footer">
