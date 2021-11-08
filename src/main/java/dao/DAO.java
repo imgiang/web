@@ -439,6 +439,53 @@ public class DAO {
         return list;
     }
 
+    public List<Product> DescendingProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product ORDER BY price DESC";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+
+                        rs.getString(9),
+                        rs.getInt(10)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    public List<Product> AscendingProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product ORDER BY price ASC";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+
+                        rs.getString(9),
+                        rs.getInt(10)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
 
 
     public Customer checkout(String name, String gioitinh, String diachi,
