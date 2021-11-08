@@ -25,7 +25,7 @@ public class DAO {
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clothes", "root", "Thuhuong01");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/webclothes_new", "root", "123456");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -433,6 +433,53 @@ public class DAO {
                             rs.getString(6))
                     );
                 }
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public List<Product> DescendingProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product ORDER BY price DESC";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+
+                        rs.getString(9),
+                        rs.getInt(10)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    public List<Product> AscendingProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product ORDER BY price ASC";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+
+                        rs.getString(9),
+                        rs.getInt(10)));
             }
         } catch (Exception e) {
         }

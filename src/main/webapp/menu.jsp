@@ -92,7 +92,7 @@
                 <button id="login" style="height:45px;margin-top:5px;" type="button" class="guest btn btn-primary ms-3 d-none" data-bs-toggle="modal" data-bs-target="#modal-login"><span><fmt:message key="a.login"/></span></button>
                 <div id="login-spinner" class="spinner-border text-light ms-3" role="status"></div>
                 <div class="dropdown">
-                    <img id="avatar"  src="./assets/avatar.jpg" data-bs-toggle="dropdown" width="38x" height="38x"
+                    <img id="avatar"  src="./assets/avatar.jpg" data-bs-toggle="dropdown" style="margin-top: 7px" width="38x" height="38x"
                          class="user avatar rounded-circle ms-3 d-none dropdown-toggle">
                     <ul class="dropdown-menu dropdown-menu-center text-small" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -136,6 +136,10 @@
 </nav>
 
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <%--giang--%>
 <script th:src="@{/js/main.js}" src="./js/main.js"></script>
 
@@ -206,7 +210,7 @@
         if (user.photoURL) {
             $(".avatar").attr("src",user.photoURL);
         } else {
-            $(".avatar").attr("src","/assets/avatar.jpg");
+            $(".avatar").attr("src","https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png");
         }
         $('#modal-login').modal('hide');
     }

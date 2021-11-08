@@ -672,28 +672,42 @@
                     <div class="review-heading">REVIEWS</div>
 
 
-                    <div class="row d-flex justify-content-left mt-500 mb-500">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h4 class="card-title">Latest Comments</h4>
-                                </div>
-                                <div class="comment-widgets">
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row m-t-0">
+                    <div class="row d-flex justify-content-center">
+                        <div class="">
+                            <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+                                <div class="card-body p-4">
 
-                                        <div class="comment-text w-100">
-                                            <c:forEach items="${listCmt}" var="o">
-                                                <div class="p-2"><img src="https://i.imgur.com/Ur43esv.jpg" alt="user" width="50" class="rounded-circle"></div>
-                                                <h6 class="font-medium"><span>${o.ten}</span></h6> <span class="m-b-15 d-block"><span>${o.cmt}</span></span>
-                                                <div class="comment-footer"> <span class="text-muted float-right">Thank and love you</span>
-                                                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+
+                                    <c:forEach items="${listCmt}" var="o">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <p>${o.cmt}</p>
+
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <img
+                                                                src="https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png"
+                                                                alt="avatar"
+                                                                width="30"
+                                                                height="30"
+                                                        />
+                                                        <p class="small mb-0 ms-2" style=""><b>${o.ten}</b></p>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <p class="small text-muted mb-0">Upvote?</p>
+                                                        <i
+                                                                class="far fa-thumbs-up mx-2 fa-xs text-black"
+                                                                style="margin-top: -0.16rem;"
+                                                        ></i>
+                                                        <p class="small text-muted mb-0">3</p>
+                                                    </div>
                                                 </div>
-                                            </c:forEach>
+                                            </div>
                                         </div>
-                                    </div> <!-- Comment Row -->
+                                    </c:forEach>
 
-                                </div> <!-- Card -->
+
+                                </div>
                             </div>
                         </div>
                     </div>
