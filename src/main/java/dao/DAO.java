@@ -425,12 +425,14 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 while (rs.next()) {
-                    list.add(new Customer(rs.getString(1),
+                    list.add(new Customer(
+                            rs.getInt(1),
                             rs.getString(2),
                             rs.getString(3),
                             rs.getString(4),
                             rs.getString(5),
-                            rs.getString(6))
+                            rs.getString(6),
+                            rs.getString(7))
                     );
                 }
             }
@@ -609,16 +611,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    public void deleteProduct(int pid) {
-        String query = "delete from product where id = ?";
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, pid);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-    }
+
     public void delete(String id) { //Để kiểu String vì khi get về nó là kiểu String -> Đỡ phải ép kiểu
 //        String query = "DELETE FROM Cart WHERE aID = ?,\n"
         String query =      "DELETE FROM Product WHERE ID = ?";
@@ -634,16 +627,16 @@ public class DAO {
         }
     }
     public void edit(String name, String image, String price,
-                     String title, String description, String size,String  cateID,String sell_ID,String amount,String id) {
+                     String title, String description,String cateID,String sell_ID, String size,String amount,String pid) {
         String query = "update product\n"
                 + "set name = ?,\n"
                 + "image = ?,\n"
                 + "price = ?,\n"
                 + "title = ?,\n"
                 + "description = ?,\n"
-                + "size = ?,\n"
                 + "cateID = ?,\n"
                 + "sell_ID = ?,\n"
+                + "size = ?,\n"
                 + "amount = ?\n"
                 + "where id = ?";
         try {
@@ -654,19 +647,20 @@ public class DAO {
             ps.setString(3, price);
             ps.setString(4, title);
             ps.setString(5, description);
-            ps.setString(6, size);
-            ps.setString(7, cateID);
+            ps.setString(6, cateID);
+            ps.setString(7, sell_ID);
             ps.setString(8, size);
             ps.setString(9, amount);
-            ps.setString(10, id);
+            ps.setString(10, pid);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
+
     public void add(String id,String name, String image, String price,
-                    String title, String description, String size,String  cateID,String sell_ID,String amount) {
-        String query = "insert into product(name,image,price,description,title, cateid,sell_id,amount) values(?,?,?,?,?,?,?,?,0)";
+                    String title, String description,String  cateID,String sell_ID, String size,String amount) {
+        String query = "insert into product(name,image,price,description,title, cateid,sell_id,size,amount) values(?,?,?,?,?,?,?,?,0)";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -675,12 +669,36 @@ public class DAO {
             ps.setString(3, price);
             ps.setString(4, description);
             ps.setString(5, title);
-            ps.setString(6, size);
-            ps.setString(7, cateID);
-            ps.setString(8,sell_ID);
+            ps.setString(6, cateID);
+            ps.setString(7,sell_ID);
+            ps.setString(8, size);
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+    public Product getProductByID(String id) {
+        String query = "select * from product\n"
+                + "where id = ?";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getInt(8),
+                                rs.getString(9),
+                                rs.getInt(10));
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
     public static void main(String[] args) {
         DAO dao = new DAO();

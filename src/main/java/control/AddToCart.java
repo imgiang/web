@@ -85,7 +85,7 @@ public class AddToCart extends HttpServlet {
         DAO dao = new DAO();
         double total = 0;
         for (Cart o : list) {
-            Product p = dao.getProduct(o.getPid());
+            Product p = dao.getProduct(o.getPid());//lay id sp
             p.setAmount(o.getAmount());
             listP.add(p);
             total += p.getAmount() * p.getPrice();

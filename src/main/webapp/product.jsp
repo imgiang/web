@@ -621,7 +621,7 @@
                             <div class="qtyplus">+</div>
                         </form>
                         <%--                        <a href="print" class="round-black-btn">Add to Cart</a>--%>
-                        <a href="cart?id=${o.id}" class="round-black-btn">Add to Cart </a>
+                        <a href="addtocart?pid=${detail.id}" class="round-black-btn">Add to Cart </a>
                     </div>
 
                 </div>
@@ -641,7 +641,7 @@
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-random"></i></a></li>
                             </ul>
-                            <a href="" class="add-to-cart">Add to Cart</a>
+                            <a href="addtocart?pid=${i.id}" class="add-to-cart">Add to Cart</a>
                         </div>
                         <div class="product-content">
                             <h3 class="title"><a href="#">${i.name}</a></h3>

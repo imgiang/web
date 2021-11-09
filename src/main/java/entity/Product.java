@@ -8,27 +8,15 @@ public class Product {
     private double price;
     private String title;
     private String description;
-    private String size;
     private  int cateID;
     private int  sell_ID;
-
-    public int getCateID() {
-        return cateID;
-    }
-
-    public void setCateID(int cateID) {
-        this.cateID = cateID;
-    }
-
-    public int getSell_ID() {
-        return sell_ID;
-    }
-
-    public void setSell_ID(int sell_ID) {
-        this.sell_ID = sell_ID;
-    }
-
+    private String size;
     private int amount;
+
+
+
+
+
 
     public Product(){
 
@@ -47,6 +35,19 @@ public class Product {
         this.amount=amount;
 
     }
+    public Product(int id, String name, String image, double price, String title, String description,int cateID,int sell_ID,String size,int amount) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+        this.title = title;
+        this.description = description;
+        this.cateID=cateID;
+        this.sell_ID=sell_ID;
+        this.size=size;
+        this.amount=amount;
+
+    }
     public Product(int id, String name, double price, String title, String image) {
         this.id = id;
         this.name = name;
@@ -54,17 +55,6 @@ public class Product {
         this.title = title;
         this.image = image;
     }
-    public Product(int id, String name, String image, double price, String title, String description,int amount) {
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.price = price;
-        this.title = title;
-        this.description = description;
-        this.amount=amount;
-
-    }
-
     @Override
     public String toString() {
         return "Product{" +
@@ -80,20 +70,19 @@ public class Product {
                 ", amount=" + amount +
                 '}';
     }
-
-    public Product(int id, String name, String image, double price, String title, String description, String size, int cateID, int sell_ID, int amount) {
+    public Product(int id, String name, String image, double price, String title, String description,int amount) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;
         this.title = title;
         this.description = description;
-        this.size = size;
-        this.cateID= cateID;
-        this.sell_ID = sell_ID;
         this.amount=amount;
 
     }
+
+
+
     public int getId() {
         return id;
     }
@@ -155,9 +144,27 @@ public class Product {
         return amount;
     }
 
+
+    public int getCateID() {
+        return cateID;
+    }
+
+    public void setCateID(int cateID) {
+        this.cateID = cateID;
+    }
+
+    public int getSell_ID() {
+        return sell_ID;
+    }
+
+    public void setSell_ID(int sell_ID) {
+        this.sell_ID = sell_ID;
+    }
+
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
 
 
 }

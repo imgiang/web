@@ -316,6 +316,9 @@
         </button>
 
         <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+            </li>
             <li class="list-group-item active">
                 <a class="text-light" href="home">Manager</a>
             </li>

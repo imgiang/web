@@ -13,15 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "AddControl", urlPatterns = {"/add"})
 public class AddControl extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -29,17 +21,17 @@ public class AddControl extends HttpServlet {
         //Get data from JSP
         String id = request.getParameter("id");
         String name = request.getParameter("name"); //Get by name
-        String description = request.getParameter("description");
+        String  image= request.getParameter("image");
         String price = request.getParameter("price");
         String title = request.getParameter("title");
-        String  image= request.getParameter("image");
-        String size =request.getParameter("size");
+        String description = request.getParameter("description");
         String cateID = request.getParameter("cateID");
         String sell_ID = request.getParameter("sell_ID");
+        String size =request.getParameter("size");
         String amount = request.getParameter("amount");
         //Add data to Database
         DAO dao = new DAO();
-        dao.add(id,name,image,price,title,description,size,cateID,sell_ID,amount);
+        dao.add(id,name,image,price,title,description,cateID,sell_ID,size,amount);
         response.sendRedirect("managerProduct");
     }
 

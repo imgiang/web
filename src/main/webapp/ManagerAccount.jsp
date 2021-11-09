@@ -132,7 +132,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="image/faviconLogo.png" />
-    <title>Computer ERA</title>
+    <title>Shop H&T&G</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -363,7 +363,7 @@
                     <thead>
                     <tr>
 
-                        <th scope="col">ID</th>
+<%--                        <th scope="col">ID</th>--%>
                         <th scope="col">Tên</th>
                         <th scope="col">Giới tính</th>
                         <th scope="col">Địa chỉ</th>

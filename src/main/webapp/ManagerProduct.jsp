@@ -283,7 +283,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="image/faviconLogo.png" />
-    <title>Fresh fruit</title>
+    <title>Shop H&T&G</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -586,6 +586,9 @@
         </button>
 
         <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+            </li>
             <li class="list-group-item active">
                 <a class="text-light" href="home">Manager</a>
             </li>
@@ -681,7 +684,7 @@
                         <td>$${o.price} </td>
                         <td>
                             <!--Link to GET in EditControl-->
-                            <a href="edit?ProductID=${o.id}" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="loadProduct?id=${o.id}" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" onclick="ProductID2(${o.id})" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
@@ -728,7 +731,7 @@
                     </div>
                     <div class="form-group">
                         <label>Image </label>
-                        <input type="text" class="form-control" required name="imageLink">
+                        <input type="text" class="form-control" required name="image">
                     </div>
                     <div class="form-group">
                         <label>Size </label>
@@ -752,11 +755,18 @@
 <%--                    </div>--%>
                     <div class="form-group">
                         <label>CateID</label>
-                        <input type="text" class="form-control" required name="cateID">
+                        <select name="cateID" class="form-control form-control-sm" style="width:70px;">
+                            <option> 1 </option>
+                            <option> 2 </option>
+                            <option> 3 </option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>SellID</label>
-                        <input type="text" class="form-control" required name="sell_ID">
+                        <label>SellID </label>
+                        <select name="sell_ID" class="form-control " style="width:70px;">
+                            <option> 1 </option>
+                            <option> 2 </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Amount</label>
