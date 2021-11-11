@@ -59,19 +59,19 @@
                 </li>
                 <li class=" nav-item ">
                     <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/goodprice"  role="button"  aria-expanded="false">
-                        Sản phẩm giá tốt
+                        <fmt:message key="a.sale" />
                     </a>
 
                 </li>
                 <li class=" nav-item ">
                     <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/newproduct" role="button" aria-expanded="false">
-                        Sản phẩm mới
+                        <fmt:message key="a.new" />
                     </a>
 
                 </li>
                 <li class="nav-item active">
 <%--                    <a class="nav-link" href="managerProduct">Manager</a>--%>
-    <a class="nav-link" href="MenuManager.jsp">Manager</a>
+    <a class="nav-link" href="MenuManager.jsp"><fmt:message key="a.manager" /></a>
                 </li>
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
