@@ -62,7 +62,7 @@ public class ManagerCustomerControl extends HttpServlet {
         List<Customer> listA = dao.getCustomer();
 
         request.setAttribute("listA", listA);
-        request.getRequestDispatcher("ManagerAccount.jsp").forward(request, response);
+        request.getRequestDispatcher("ManagerCustomer.jsp").forward(request, response);
     }
 
     /**

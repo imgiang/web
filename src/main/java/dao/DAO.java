@@ -520,12 +520,13 @@ public class DAO {
             ps.setString(1, cmnd);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Customer(rs.getString(1),
+                return new Customer(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getString(6));
+                        rs.getString(6),
+                        rs.getString(7));
             }
         } catch (Exception e) {
         }
@@ -705,7 +706,8 @@ public class DAO {
         List<Product> list = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
 
-        for (Product o : list) {
+        List<Customer> listCs = dao.getCustomer();
+        for (Customer o : listCs) {
             System.out.println(o);
         }
     }

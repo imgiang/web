@@ -9,14 +9,7 @@ public class Customer {
     private String email;
     private String cmnd;
 
-    public Customer(String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd){
-        this.name =name;
-        this.gioitinh=gioitinh;
-        this.diachi=diachi;
-        this.dienthoai=dienthoai;
-        this.email=email;
-        this.cmnd=cmnd;
-    }
+
     public Customer(int id,String name, String gioitinh, String diachi, String dienthoai, String email, String cmnd){
         this.id=id;
         this.name =name;

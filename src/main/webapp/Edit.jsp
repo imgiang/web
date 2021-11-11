@@ -291,22 +291,7 @@
                         <label>Size </label>
                         <input value="${detail.size}" name="size" type="text" class="form-control" required>
                     </div>
-                    <%--                    <div class="form-group">--%>
-                    <%--                        <label>Category</label>--%>
-                    <%--                        <select name="CategoryID" class="form-control" required>--%>
-                    <%--                            <c:forEach var="o" items="${listC}">--%>
-                    <%--                                <option ${TagCategoryID == o.id ? "selected" : ""} value="${o.id}">${o.name}</option>--%>
-                    <%--                            </c:forEach>--%>
-                    <%--                        </select>--%>
-                    <%--                    </div>--%>
-                    <%--                    <div class="form-group">--%>
-                    <%--                        <label>Seller</label>--%>
-                    <%--                        <select name="SellerID" class="form-control" required>--%>
-                    <%--                            <c:forEach var="o" items="${listS}">--%>
-                    <%--                                <option ${TagSellerID == o.id ? "selected" : ""} value="${o.id}">${o.user}</option>--%>
-                    <%--                            </c:forEach>--%>
-                    <%--                        </select>--%>
-                    <%--                    </div>--%>
+
                     <div class="form-group">
                         <label>CateID</label>
                         <select name="cateID" class="form-control " style="width:70px;">

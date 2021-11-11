@@ -32,7 +32,7 @@ public class AddControl extends HttpServlet {
         //Add data to Database
         DAO dao = new DAO();
         dao.add(id,name,image,price,title,description,cateID,sell_ID,size,amount);
-        response.sendRedirect("managerProduct");
+        response.sendRedirect("managerProduct" );
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

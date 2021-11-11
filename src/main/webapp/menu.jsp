@@ -45,7 +45,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090;height:70px;" >
     <div class="container" >
-        <a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVE</a>
+        <a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVER</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,19 +59,19 @@
                 </li>
                 <li class=" nav-item ">
                     <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/goodprice"  role="button"  aria-expanded="false">
-                        Sản phẩm giá tốt
+                        <fmt:message key="a.sale" />
                     </a>
 
                 </li>
                 <li class=" nav-item ">
                     <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/newproduct" role="button" aria-expanded="false">
-                        Sản phẩm mới
+                        <fmt:message key="a.new" />
                     </a>
 
                 </li>
                 <li class="nav-item active">
-<%--                    <a class="nav-link" href="managerProduct">Manager</a>--%>
-    <a class="nav-link" href="MenuManager.jsp">Manager</a>
+                    <a class="nav-link" href="Dashbroard.jsp">Manager</a>
+<%--    <a class="nav-link" href="MenuManager.jsp"><fmt:message key="a.manager" /></a>--%>
                 </li>
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
