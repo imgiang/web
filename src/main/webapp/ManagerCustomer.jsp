@@ -124,42 +124,42 @@
 
                         <%--                <jsp:include page="MenuManager.jsp"/>--%>
 
-                            <table class="table table-striped">
+                        <table class="table table-striped">
 
+                            <tr>
+
+                                <th >Tên</th>
+                                <th >Giới tính</th>
+                                <th >Địa chỉ</th>
+                                <th>Điện Thoại</th>
+                                <th >email</th>
+                                <th >cmnd</th>
+
+
+                            </tr>
+
+                            <tbody>
+                            <c:forEach var="o" items="${listA}">
                                 <tr>
 
-                                    <th >Tên</th>
-                                    <th >Giới tính</th>
-                                    <th >Địa chỉ</th>
-                                    <th>Điện Thoại</th>
-                                    <th >email</th>
-                                    <th >cmnd</th>
+
+                                    <td>
+                                            ${o.name}
+                                    </td>
+                                    <td>
+                                            ${o.gioitinh}
+                                    </td>
+                                    <td>${o.diachi}</td>
+                                    <td>${o.dienthoai}</td>
+                                    <td>${o.email}</td>
+                                    <td>${o.cmnd}</td>
+
 
 
                                 </tr>
-
-                                <tbody>
-                                <c:forEach var="o" items="${listA}">
-                                    <tr>
-
-
-                                        <td>
-                                                ${o.name}
-                                        </td>
-                                        <td>
-                                                ${o.gioitinh}
-                                        </td>
-                                        <td>${o.diachi}</td>
-                                        <td>${o.dienthoai}</td>
-                                        <td>${o.email}</td>
-                                        <td>${o.cmnd}</td>
-
-
-
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                            </c:forEach>
+                            </tbody>
+                        </table>
 
 
 

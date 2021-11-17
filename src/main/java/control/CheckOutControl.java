@@ -109,12 +109,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 @WebServlet("/checkout")
 public class CheckOutControl extends HttpServlet {
-        //    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
+
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
                 response.setContentType("text/html;charset=UTF-8");
-//        String PROID= request.getParameter("1");
+
                 String name = request.getParameter("name");
                 String gioitinh = request.getParameter("gioitinh");
                 String diachi = request.getParameter("diachi");
@@ -126,7 +125,7 @@ public class CheckOutControl extends HttpServlet {
                 if(a == null){
                         //dc chekout
                         dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
-                        response.sendRedirect("home.jsp");
+                        response.sendRedirect("myorder");
                 }else{
                         //day ve trang checkout.jsp
                         response.sendRedirect("checkout.jsp");

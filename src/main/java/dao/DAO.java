@@ -393,28 +393,6 @@ public class DAO {
     }
 
 
-
-
-//    public void insertProduct(String name, String image, String price,
-//                              String title, String description, String category, int sid) {
-//        String query = "INSERT into product \n"
-//                + "(name, image, price, title, description, cateID, sell_ID)\n"
-//                + "VALUES(?,?,?,?,?,?,?)";
-//        try {
-//            conn = new DAO().getConnection();//mo ket noi voi sql
-//            ps = conn.prepareStatement(query);
-//            ps.setString(1, name);
-//            ps.setString(2, image);
-//            ps.setString(3, price);
-//            ps.setString(4, title);
-//            ps.setString(5, description);
-//            ps.setString(6, category);
-//            ps.setInt(7, sid);
-//            ps.executeUpdate();
-//        } catch (Exception e) {
-//            conn = new DAO().getConnection();
-//        }
-//    }
     public List<Customer> getCustomer() {
         List<Customer> list = new ArrayList<>();
         String query = "select * from customer";
@@ -440,6 +418,32 @@ public class DAO {
         }
         return list;
     }
+    public List<Customer> getOdCustomer() {
+        List<Customer> list = new ArrayList<>();
+        String query = "select * from customer\n" +
+                "                ORDER BY id DESC\n" +
+                "                limit 1;";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(new Customer(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7))
+                );
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
 
     public List<Product> DescendingProduct() {
         List<Product> list = new ArrayList<>();

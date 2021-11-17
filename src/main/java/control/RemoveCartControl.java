@@ -1,8 +1,6 @@
 package control;
 
-
 import dao.DAO;
-//import entity.Account;
 import entity.Cart;
 import entity.Product;
 import java.io.IOException;
@@ -16,22 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author pc
- */
-@WebServlet(name = "AddToCart", urlPatterns = {"/addtocart"})
-public class AddToCart extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+@WebServlet("/removeCart")
+public class RemoveCartControl extends HttpServlet {
+
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -40,44 +27,27 @@ public class AddToCart extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddToCart</title>");
+            out.println("<title>Servlet RemoveCartControl</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddToCart at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RemoveCartControl at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        List<Cart> list = (List<Cart>) session.getAttribute("cart"); //lấy ra list cart trong session
         int pid = Integer.parseInt(request.getParameter("pid"));
-        Cart c = new Cart(pid, 1);
-        List<Cart> list = new ArrayList<>();
-        if (session.getAttribute("cart") == null) {
-            list.add(c);
-        } else {
-            list = (List<Cart>) session.getAttribute("cart");
-            int check = 0;
-            for (Cart o : list) {
-                if (o.getPid() == pid) {
-                    o.setAmount(o.getAmount() + 1);
-                    check = 1;
-                }
-            }
-            if (check == 0) {
-                list.add(c);
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i).getPid() == pid){//tìm thấy id của sp xoá
+                list.remove(i); //xoá sp
+                break;  //thoát khỏi vòng lặp
             }
         }
         session.setAttribute("cart", list);
@@ -85,7 +55,7 @@ public class AddToCart extends HttpServlet {
         DAO dao = new DAO();
         double total = 0;
         for (Cart o : list) {
-            Product p = dao.getProduct(o.getPid());//lay id sp
+            Product p = dao.getProduct(o.getPid());
             p.setAmount(o.getAmount());
             listP.add(p);
             total += p.getAmount() * p.getPrice();
@@ -98,25 +68,14 @@ public class AddToCart extends HttpServlet {
         request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+
     @Override
     public String getServletInfo() {
         return "Short description";
