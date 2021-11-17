@@ -37,12 +37,96 @@
     <%--    giang--%>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        body{
+
+        body {
             background-image: url("https://www.mechatronicsart.com/wp-content/uploads/2016/06/Vilarpac_website_background.jpg");
             background-attachment: fixed;
+
+        }
+        .modal-confirm {
+            color: #636363;
+            width: 325px;
+            margin: 30px auto;
+        }
+        .modal-confirm .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .modal-confirm .modal-header {
+            border-bottom: none;
+            position: relative;
+        }
+        .modal-confirm h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+        .modal-confirm .form-control, .modal-confirm .btn {
+            min-height: 40px;
+            border-radius: 3px;
+        }
+        .modal-confirm .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        .modal-confirm .modal-footer {
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .modal-confirm .icon-box {
+            color: #fff;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #82ce34;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-confirm .icon-box i {
+            font-size: 58px;
+            position: relative;
+            top: 3px;
+        }
+        .modal-confirm.modal-dialog {
+            margin-top: 80px;
+        }
+        .modal-confirm .btn {
+            color: #fff;
+            border-radius: 4px;
+            background: #82ce34;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+        .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+            background: #6fb32b;
+            outline: none;
+        }
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
         }
     </style>
+
 
 </head>
 
@@ -111,25 +195,71 @@
 
                 <h4 class="mb-3">Hình thức thanh toán</h4>
 
-                <div class="d-block my-3">
-                    <div class="custom-control custom-radio">
-                        <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""
-                               value="1">
-                        <label class="custom-control-label"  >   Tiền mặt</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""
-                               value="2">
-                        <label class="custom-control-label" for="httt-2">   Chuyển khoản</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""
-                               value="3">
-                        <label class="custom-control-label" for="httt-3">   Ship COD</label>
-                    </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Tiền mặt
+                    </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Chuyển khoản
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Ship COD
+                    </label>
+                </div>
+<%--                <div class="d-block my-3">--%>
+<%--                    <div class="custom-control custom-radio">--%>
+<%--                        <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""--%>
+<%--                               value="1">--%>
+<%--                        <label class="custom-control-label" for="httt-1"></label>--%>
+<%--                        <span>Tiền mặt</span>--%>
+<%--                    </div>--%>
+<%--                    <div class="custom-control custom-radio">--%>
+<%--                        <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""--%>
+<%--                               value="2">--%>
+<%--                        <label class="custom-control-label" for="httt-2">Chuyển khoản</label>--%>
+<%--                    </div>--%>
+<%--                    <div class="custom-control custom-radio">--%>
+<%--                        <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""--%>
+<%--                               value="3">--%>
+<%--                        <label class="custom-control-label" for="httt-3">Ship COD</label>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang" style="margin-bottom: 10px;">Đặt hàng</button>
+<%--                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang" style="margin-bottom: 10px;">Đặt hàng</button>--%>
+                <div >
+                    <!-- Button HTML (to Trigger Modal) -->
+                    <button href="#myModal" class="btn btn-primary btn-lg btn-block" data-toggle="modal">Đặt hàng </button>
+                </div>
+                <!-- Modal HTML -->
+                <form>
+                    <div id="myModal" class="modal fade">
+                        <div class="modal-dialog modal-confirm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="icon-box">
+                                        <i class="material-icons">&#xE876;</i>
+                                    </div>
+                                    <h4 class="modal-title">Bạn đã đặt hàng thành công!</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center">Đơn hàng của bạn đã được xác nhận và sẽ được giao đến bạn trong thời gian sơm nhất</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success btn-block" type="submit" name="btnDatHang" data-dismiss="modal">Xem chi tiết đơn hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
             </div>
 
         </form>

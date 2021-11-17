@@ -206,35 +206,21 @@
                                     <label>Size </label>
                                     <input type="text" class="form-control" required name="size">
                                 </div>
-                                <%--                    <div class="form-group">--%>
-                                <%--                        <label>Category</label>--%>
-                                <%--                        <select name="CategoryID" class="form-control" required>--%>
-                                <%--                            <c:forEach var="o" items="${listC}">--%>
-                                <%--                                <option value="${o.id}">${o.name}</option>--%>
-                                <%--                            </c:forEach>--%>
-                                <%--                        </select>--%>
-                                <%--                    </div>--%>
-                                <%--                    <div class="form-group">--%>
-                                <%--                        <label>Seller</label>--%>
-                                <%--                        <select name="SellerID" class="form-control" required>--%>
-                                <%--                            <c:forEach var="o" items="${listS}">--%>
-                                <%--                                <option value="${o.id}">${o.user}</option>--%>
-                                <%--                            </c:forEach>--%>
-                                <%--                        </select>--%>
-                                <%--                    </div>--%>
+
                                 <div class="form-group">
                                     <label>CateID</label>
                                     <select name="cateID" class="form-control form-control-sm" style="width:70px;">
-                                        <option> 1 </option>
-                                        <option> 2 </option>
-                                        <option> 3 </option>
+                                        <option value="1"> Nam </option>
+                                        <option value="2"> Nữ </option>
+                                        <option value="3"> Bé Trai </option>
+                                        <option value="4"> Bé Gái </option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>SellID </label>
                                     <select name="sell_ID" class="form-control " style="width:70px;">
-                                        <option> 1 </option>
-                                        <option> 2 </option>
+                                        <option value="0"> 0 </option>
+                                        <option value="1"> 1 </option>
                                     </select>
                                 </div>
                                 <div class="form-group">

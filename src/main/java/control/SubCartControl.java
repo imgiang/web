@@ -59,7 +59,10 @@ public class SubCartControl extends HttpServlet{
                             break;}
                     }
 
-                }}}
+                    if (o.getAmount()==0) {
+                        list.remove(i);
+                        break;
+                    }}}}
 
 
             session.setAttribute("cart", list);

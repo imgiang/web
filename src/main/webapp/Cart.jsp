@@ -69,7 +69,7 @@
                                 <tr>
                                     <td>
                                         <a href="home">
-                                            <button type="button" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-primary">Quay lại gian hàng</button>
                                         </a>
 
                                     </td>

@@ -295,17 +295,17 @@
                     <div class="form-group">
                         <label>CateID</label>
                         <select name="cateID" class="form-control " style="width:70px;">
-                            <option> 1 </option>
-                            <option> 2 </option>
-                            <option> 3 </option>
-                            <option> 4 </option>
+                            <option value="1"> Nam </option>
+                            <option value="2"> Nữ </option>
+                            <option value="3"> Bé Trai </option>
+                            <option value="4"> Bé Gái </option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>SellID </label>
                         <select name="sell_ID" class="form-control " style="width:70px;">
-                            <option> 1 </option>
-                            <option> 2 </option>
+                            <option value="0"> 0 </option>
+                            <option value="1"> 1 </option>
                         </select>
                     </div>
                     <div class="form-group">

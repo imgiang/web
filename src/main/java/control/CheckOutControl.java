@@ -122,14 +122,12 @@ public class CheckOutControl extends HttpServlet {
                 String cmnd = request.getParameter("cmnd");
                 DAO dao = new DAO();
                 Customer a=dao.checkCustomerExist(cmnd);
-                if(a == null){
                         //dc chekout
-                        dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
-                        response.sendRedirect("myorder");
-                }else{
-                        //day ve trang checkout.jsp
-                        response.sendRedirect("checkout.jsp");
-                }
+
+                dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
+                response.sendRedirect("myorder");
+
+
         }
 
 
