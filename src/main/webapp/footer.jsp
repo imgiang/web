@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-xs-12 about-company">
-                <h2><a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVE</a></h2>
+                <h2><a class="navbar-brand " style="color:#f802c2 ;font-size:35px;font-family: Florence, cursive;" href="home">LOVER</a></h2>
                 <p class="pr-5 text-white-50"><fmt:message key="a.quote" /></p>
                 <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
             </div>
@@ -75,22 +75,21 @@
 <%--                </ul>--%>
 <%--            </div>--%>
             <div class="col-lg-4 col-xs-12 location">
-                <h4 class="mt-lg-0 mt-sm-4"><fmt:message key="a.location" /></h4>
+                <h4 class="mt-lg-0 mt-sm-4">
+                    <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Kinh+T%E1%BA%BF+Qu%E1%BB%91c+D%C3%A2n/@20.9982745,105.8420207,16.06z/data=!4m5!3m4!1s0x0:0xd2ec575c01017afa!8m2!3d20.9999717!4d105.8426663?hl=vi" target="_blank" style="padding-bottom: 2px">
+                        <img  src="https://cdn-icons.flaticon.com/png/512/186/premium/186250.png?token=exp=1637178114~hmac=0413b51d89ffc9a3d5f810f2ff979438" style="height :35px"  alt="anh">
+                    </a>
+                    <fmt:message key="a.location" />
+                </h4>
                 <p>Đại học Kinh Tế quốc dân</p>
                 <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
                 <p><i class="fa fa-envelope-o mr-3"></i>love@hsdf.com</p>
             </div>
             <div class="col-lg-3 col-xs-12 links">
                 <h4 class="mt-lg-0 mt-sm-3"><fmt:message key="a.payment" /></h4>
-                <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Kinh+T%E1%BA%BF+Qu%E1%BB%91c+D%C3%A2n/@20.9982745,105.8420207,16.06z/data=!4m5!3m4!1s0x0:0xd2ec575c01017afa!8m2!3d20.9999717!4d105.8426663?hl=vi" target="_blank">
-                    <img  src="https://lh3.googleusercontent.com/aXly0BwzoyqFO6tdUzSoWGYZY1r5LQNgnKr_ZLydN5yAfZcGMZzyhUYFte-lBBd5sOxZcNrNhbHmRvpe_zf1s_PE-4rG7jLZTer9BDZmGV7xlDO9jd40GMknbzLq0PnhJUxuSGEz5-iJRUM6a34zfKKeiAaYZJxXd4paUuRK0af2XlrNa3gSSlqF-_PU2zPkkXKUqqe4VsBqzTJ24TL4ncUs17jwVIoFDndkx_pI66_sOaVCNADaKQsG06ZhVx2tK2dWSTcbSQPZIuT2ZE_EGPmPj9rvP6RKWKcIES1ZGGFkb_Vd-XEeRqQgkjPbWfQ33p6Q1syqZFpruK-MYxbXYZF1wAUaCjoy5EfwwIsbq3NvbeyhAKtMZy_Loq_9baXC51VEnBfnT1rTnPfjQnY5EX3VTltCFyHYMlI022_uJbYeflzFmzdxAvtUJ1QGVHI5lrOqLcpBAOSPv58MR2r7z7HdvkZ2YDEdUUS5e5r5lnuICjdWY9wCXgIPwEYsGunvr8JYiiJYsq6QISLUwpPGoHGv__P6LUK-KiLRMW6w67DO5B0yYNOwTL1gOUWyyWkyl0a9Bv_P9Wl16FboaFsWpIVF5asoxET3rLVfYXw4N9-f7ma2wBNqfDCT33q42CFEL2hfKnWghQIAkB0hgfViLwNbuDGm9ySKc-RXHrBMJDJXjwLsV6tszWIILsKgiAj_KhoiQgCuPKqaPlnZ68z93WA=w381-h187-no?authuser=0" style="height :100px;" alt="anh">
+                <a href="https://www.google.com/mahttps://www.paypal.com/vn/home" target="_blank">
+                    <img  src="https://i.pinimg.com/originals/38/ce/a1/38cea1a633147f40ac8ea0d8499f25fb.png" style="height :130px; width: 250px" alt="anh">
                 </a>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col copyright">
-                <p class=""><small class="text-white-50">© 2021 Copyright:        <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank" style=""> HTG TEAM </a>
-                </small></p>
             </div>
         </div>
     </div>
