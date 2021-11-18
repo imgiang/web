@@ -1,7 +1,6 @@
 package control;
 
 import dao.DAO;
-import entity.Account;
 import entity.Cart;
 import entity.Customer;
 import entity.Product;

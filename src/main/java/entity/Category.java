@@ -12,6 +12,7 @@ public class Category {
     public Category(int cid,String cname) {
         this.cid = cid;
         this.cname = cname;
+
     }
 
     public String getCname() {

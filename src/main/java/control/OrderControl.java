@@ -1,15 +1,11 @@
 package control;
 
-import dao.DAO;
-import entity.Account;
 import entity.Cart;
-import entity.Product;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 

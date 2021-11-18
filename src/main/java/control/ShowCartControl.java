@@ -1,7 +1,8 @@
 package control;
 
-import entity.*;
 import dao.DAO;
+import entity.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;

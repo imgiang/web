@@ -1,11 +1,7 @@
-
 package dao;
 
 
-import entity.Category;
-import entity.Comment;
-import entity.Customer;
-import entity.Product;
+import entity.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -89,7 +85,7 @@ public class DAO {
         List<Product> list = new ArrayList<>();
         String query = "select*from product\n" +
                 "order by id\n" +
-                "limit ?,6;";
+                "limit ?,3;";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -185,7 +181,7 @@ public class DAO {
 
     public List<Category> getAllCategory() {
         List<Category> list = new ArrayList<>();
-        String query = "select *from category";
+        String query = "select *from category ORDER BY cid DESC LIMIT 4";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -193,6 +189,28 @@ public class DAO {
             while (rs.next()) {
                 list.add(new Category(rs.getInt(1),
                                 rs.getString(2)
+
+                        )
+                );
+
+
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public List<Category> getAllCategoryVie() {
+        List<Category> list = new ArrayList<>();
+        String query = "select *from category ORDER BY cid ASC LIMIT 4";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Category(rs.getInt(1),
+                                rs.getString(2)
+
                         )
                 );
 
@@ -393,9 +411,31 @@ public class DAO {
     }
 
 
+
+
+    //    public void insertProduct(String name, String image, String price,
+//                              String title, String description, String category, int sid) {
+//        String query = "INSERT into product \n"
+//                + "(name, image, price, title, description, cateID, sell_ID)\n"
+//                + "VALUES(?,?,?,?,?,?,?)";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, name);
+//            ps.setString(2, image);
+//            ps.setString(3, price);
+//            ps.setString(4, title);
+//            ps.setString(5, description);
+//            ps.setString(6, category);
+//            ps.setInt(7, sid);
+//            ps.executeUpdate();
+//        } catch (Exception e) {
+//            conn = new DAO().getConnection();
+//        }
+//    }
     public List<Customer> getCustomer() {
         List<Customer> list = new ArrayList<>();
-        String query = "select * from customer";
+        String query = "select * from customer ";
 
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
@@ -443,7 +483,6 @@ public class DAO {
         }
         return list;
     }
-
 
     public List<Product> DescendingProduct() {
         List<Product> list = new ArrayList<>();
@@ -515,29 +554,28 @@ public class DAO {
         return null;
 
     }
-    public Customer checkCustomerExist(String cmnd){
-        String query = "select * from customer\n"
-                + "where cmnd = ?\n";
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, cmnd);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                return new Customer(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7));
-            }
-        } catch (Exception e) {
-        }
-        return null;
-
-
-    }
+//    public Customer checkCustomerExist(String cmnd){
+//        String query = "select * from customer\n"
+//                + "where cmnd = ?\n";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, cmnd);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return new Customer(rs.getString(1),
+//                        rs.getString(2),
+//                        rs.getString(3),
+//                        rs.getString(4),
+//                        rs.getString(5),
+//                        rs.getString(6));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return null;
+//
+//
+//    }
     public void editProduct(String name, String image, String price,
                             String title, String description, String size,String  cateID,String sell_ID,String amount,String id) {
         String query = "update product\n"
@@ -586,18 +624,7 @@ public class DAO {
         }
         return null;
     }
-    public void addToCart(int aid, int pid, int amount) {
-        String query = "insert into cart values(?,?,?)";
-        try {
-            conn = new DAO().getConnection();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setInt(1, aid);
-            ps.setInt(2, pid);
-            ps.setInt(3, amount);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-    }
+
     public void addToProduct(String name, String image, String price,
                              String title, String description, String size,String  cateID,String sell_ID,String amount) {
         String query = "insert into product(name,image,price,description,title, cateid,sell_id,amount) values(?,?,?,?,?,?,?,?)";
@@ -631,6 +658,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
+
     public void edit(String name, String image, String price,
                      String title, String description,String cateID,String sell_ID, String size,String amount,String pid) {
         String query = "update product\n"
@@ -661,6 +689,29 @@ public class DAO {
         } catch (Exception e) {
         }
     }
+//    public void update( String amount,String pid) {
+//        String query = "update product\n"
+//
+//                + "set Product.amount =cart.amount \n"
+//              + "where id = ?";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//
+//            ps.setString(1, name);
+//            ps.setString(2, image);
+//            ps.setString(3, price);
+//            ps.setString(4, title);
+//            ps.setString(5, description);
+//            ps.setString(6, cateID);
+//            ps.setString(7, sell_ID);
+//            ps.setString(8, size);
+//            ps.setString(9, amount);
+//            ps.setString(10, pid);
+//            ps.executeUpdate();
+//        } catch (Exception e) {
+//        }
+//    }
 
 
     public void add(String id,String name, String image, String price,
@@ -698,24 +749,165 @@ public class DAO {
                         rs.getString(6),
                         rs.getInt(7),
                         rs.getInt(8),
-                                rs.getString(9),
-                                rs.getInt(10));
+                        rs.getString(9),
+                        rs.getInt(10));
             }
         } catch (Exception e) {
         }
         return null;
     }
+//    public Account login(String user, String pass) {
+//        String query = "select * from account\n"
+//                + "where user = ?\n"
+//                + "and pass = ?";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, user);
+//            ps.setString(2, pass);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return new Account(rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getString(3),
+//                        rs.getInt(4),
+//                        rs.getInt(5));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return null;
+//    }
+//    public void singup(String user, String pass) {
+//        String query = "insert into account\n"
+//                + "values(?,?,0,0)";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, user);
+//            ps.setString(2, pass);
+//            ps.executeUpdate();
+//        } catch (Exception e) {
+//        }
+//    }
+//    public Account checkAccountExist(String user) {
+//        String query = "select * from account\n"
+//                + "where user = ?\n";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, user);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return new Account(rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getString(3),
+//                        rs.getInt(4),
+//                        rs.getInt(5));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return null;
+//    }
+    public void addToCart(int aid, int pid, int amount) {
+        String query = "insert into cart values(?,?,?)";
+        try {
+            conn = new DAO().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, aid);
+            ps.setInt(2, pid);
+            ps.setInt(3, amount);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    //list sp dã bán
+//    public List<Product> getCart(){
+//        List<Product> list = new ArrayList<>();
+//        String query="select product.id,product.name,product.image,product.price,cart.amount from product INNER JOIN Cart ON product.id=Cart.pid where aid=?";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                Product p= new Product(rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getString(3),
+//                        rs.getDouble(4),
+//                        rs.getInt(10));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return list;
+//    }
+//    public List<Product> getProCart(){
+//        List<Product> list = new ArrayList<>();
+//        String query="select * from product INNER JOIN Cart ON product.id=Cart.pid";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                list.add(new Product(rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getString(3),
+//                        rs.getDouble(4),
+//                        rs.getInt(10)));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return list;
+//    }
+
+
+//    public List<Cart> getCart(int id) {
+//        List<Cart> list =new ArrayList<>();
+//        String query = "select Product.id, Product.Name, Product.Description, Product.Price, Product.image, Cart.Amount\n"
+//                + "from Cart inner join Product\n"
+//                + "on Cart.ProductID = Product.ID\n"
+//                + "where Cart.AccountID = ?";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setInt(1, id);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                new Product(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5));
+//                int amount = rs.getInt(6);
+//                list.add(new Cart(id, amount));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return list;
+//    }
+//    public int countCart(int pid) {
+//        int count = 0;
+//        String query = "select count(*)\n"
+//                + "from Cart in10ner join Product \n"
+//                + "on Cart.ProductID = Product.ID\n"
+//                + "where Cart.AccountID = ?";
+//        try {
+//            conn = new DAO().getConnection();//mo ket noi voi sql
+//            ps = conn.prepareStatement(query);
+//            ps.setInt(1, pid);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                count = rs.getInt(1);
+//            }
+//        } catch (Exception e) {
+//        }
+//        return count;
+//    }
+
     public static void main(String[] args) {
         DAO dao = new DAO();
-        List<Product> list = dao.getTop6();
-        List<Category> listC = dao.getAllCategory();
+//        tomer();
+        List<Product> list= dao.getAllProduct();
 
-        List<Customer> listCs = dao.getCustomer();
-        for (Customer o : listCs) {
+        for (Product o : list) {
             System.out.println(o);
         }
     }
 
 }
-
-

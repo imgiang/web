@@ -84,8 +84,8 @@
                         <fmt:message key="a.language"/>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="?lang=vi"><fmt:message key="a.Vietnamese"/></a></li>
-                        <li><a class="dropdown-item" href="?lang=en"><fmt:message key="a.English"/></a></li>
+                        <li><a class="dropdown-item" href="catevie?lang=vi"><fmt:message key="a.Vietnamese"/></a></li>
+                        <li><a class="dropdown-item" href="home?lang=en"><fmt:message key="a.English"/></a></li>
                     </ul>
                 </div>
                 <%--                    giang--%>
