@@ -45,13 +45,15 @@
         </ul>
         <h5 class="text-center"><b>In transit</b>. The order has been shipped!</h5>
     </div>
-    <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading" style="background-color: #d5d5d0">
+    <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading" style="background-color: #ee6a0b">
         <div class="text-uppercase">
-            <p>Order detail</p>
+            <h3 style="color:black">Order detail</h3>
         </div>
-        <div class="h4">Thursday, July 24, 2017</div>
+        <div class="">
+            <h4> Saturday, November 20, 2021</h4>
+           </div>
         <div class="pt-1">
-            <p>Order #12615 is currently<b class="text-dark"> processing</b></p>
+            <p style="color:black">Order #12615 is currently<b class="text-dark"> processing</b></p>
         </div>
         <div class="btn close text-white"> &times; </div>
     </div>
@@ -112,7 +114,7 @@
         <div class="pl-3 font-weight-bold">Related Subsriptions</div>
         <div class="d-sm-flex justify-content-between rounded my-3 subscriptions">
             <div> <b>#9632</b> </div>
-            <div>May 22, 2017</div>
+            <div>November 20, 2021</div>
             <div>Status: Processing</div>
             <div> Total: <b> $${sum}</b> </div>
         </div>

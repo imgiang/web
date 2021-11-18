@@ -122,7 +122,7 @@ public class CheckOutControl extends HttpServlet {
                 String cmnd = request.getParameter("cmnd");
                 DAO dao = new DAO();
                 Customer a=dao.checkCustomerExist(cmnd);
-                        //dc chekout
+                //dc chekout
 
                 dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
                 response.sendRedirect("myorder");

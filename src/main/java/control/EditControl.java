@@ -34,9 +34,6 @@ public class EditControl extends HttpServlet {
 
         request.getRequestDispatcher("Edit.jsp").forward(request, response);
     }
-
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -58,6 +55,7 @@ public class EditControl extends HttpServlet {
         dao.edit( name,image,price,title,description,cateID,sell_ID,size,amount,pid);
         response.sendRedirect("managerProduct");
     }
+
 
 
     @Override

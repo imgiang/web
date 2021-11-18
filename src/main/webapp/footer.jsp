@@ -63,17 +63,17 @@
                 <p class="pr-5 text-white-50"><fmt:message key="a.quote" /></p>
                 <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
             </div>
-<%--            <div class="col-lg-3 col-xs-12 links">--%>
-<%--                <h4 class="mt-lg-0 mt-sm-3">Links</h4>--%>
-<%--                <ul class="m-0 p-0">--%>
-<%--                    <li>Lorem ipsum</li>--%>
-<%--                    <li>Nam mauris velit</li>--%>
-<%--                    <li>Etiam vitae mauris</li>--%>
-<%--                    <li>Fusce scelerisque</li>--%>
-<%--                    <li>Sed faucibus</li>--%>
-<%--                    <li>Mauris efficitur nulla</li>--%>
-<%--                </ul>--%>
-<%--            </div>--%>
+            <%--            <div class="col-lg-3 col-xs-12 links">--%>
+            <%--                <h4 class="mt-lg-0 mt-sm-3">Links</h4>--%>
+            <%--                <ul class="m-0 p-0">--%>
+            <%--                    <li>Lorem ipsum</li>--%>
+            <%--                    <li>Nam mauris velit</li>--%>
+            <%--                    <li>Etiam vitae mauris</li>--%>
+            <%--                    <li>Fusce scelerisque</li>--%>
+            <%--                    <li>Sed faucibus</li>--%>
+            <%--                    <li>Mauris efficitur nulla</li>--%>
+            <%--                </ul>--%>
+            <%--            </div>--%>
             <div class="col-lg-4 col-xs-12 location">
                 <h4 class="mt-lg-0 mt-sm-4">
 

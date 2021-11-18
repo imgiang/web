@@ -41,6 +41,10 @@
             background-color: #666;
             color: white;
         }
+        .btn.active {
+            background: #cecece;
+            text-decoration: none;
+        }
     </style>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark "  style="background-color: #169090;height:70px;" >
@@ -50,9 +54,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul id="myDiv" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul  class="navbar-nav me-auto mb-2 mb-lg-0" onclick="myFunction(e)">
                 <li class=" nav-item ">
-                    <a class="btn active nav-link" style="color:#afafd0 ;font-size:20px;" aria-current="page" href="#"><fmt:message key="a.home" /></a>
+                    <a  class="btn nav-link" style="color:#afafd0 ;font-size:20px;" aria-current="page" href="#"><fmt:message key="a.home" /></a>
                 </li>
                 <li class=" nav-item">
                     <a class="btn nav-link" style="color:#afafd0 ;font-size:20px;" href="/hotproduct"><fmt:message key="a.hot" /></a>
@@ -76,7 +80,7 @@
                 </li>
             </ul>
             <form class="d-flex" style="margin-top: 1px; margin-bottom: 1px;" >
-                <span><a class="nav-link" href="show?pid=${o.id}"><img style="height:35px;" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" ></a></span>
+                <span><a class="nav-link" href="show"><img style="height:35px;" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" ></a></span>
 
 
                 <div class="btn-group ms-3">
@@ -235,6 +239,15 @@
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
+    }
+</script>
+<script>
+    function myFunction(e) {
+        var elems = document.querySelector(".active");
+        if(elems !==null){
+            elems.classList.remove("active");
+        }
+        e.target.className = "active";
     }
 </script>
 <%--giang--%>

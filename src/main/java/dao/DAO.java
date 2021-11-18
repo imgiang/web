@@ -138,7 +138,7 @@ public class DAO {
         List<Product> list = new ArrayList<>();
         String query = "SELECT*FROM product\n" +
                 "ORDER BY amount DESC\n" +
-                "limit 6;";
+                "limit 9;";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -698,8 +698,8 @@ public class DAO {
                         rs.getString(6),
                         rs.getInt(7),
                         rs.getInt(8),
-                                rs.getString(9),
-                                rs.getInt(10));
+                        rs.getString(9),
+                        rs.getInt(10));
             }
         } catch (Exception e) {
         }
@@ -708,14 +708,13 @@ public class DAO {
     public static void main(String[] args) {
         DAO dao = new DAO();
         List<Product> list = dao.getTop6();
-        List<Category> listC = dao.getAllCategory();
+        List<Product> listC = dao.getAllProduct();
 
-        List<Customer> listCs = dao.getCustomer();
-        for (Customer o : listCs) {
+//        List<Product> listCs = dao.getCustomer();
+        for (Product o : listC) {
             System.out.println(o);
         }
     }
 
 }
-
 

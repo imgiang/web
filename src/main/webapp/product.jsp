@@ -626,31 +626,36 @@
 
                 </div>
             </div>
-            <h3>Sản phẩm tương tự</h3>
-            <div class="row">
-                <c:forEach items="${listPP}" var="i">
-                <div class="col-md-3 col-sm-6" style="">
-                    <div class="product-grid">
-                        <div class="product-image">
-                    <a href="detail?pid=${i.id}&cateID=${i.cateID}" >
-                    <img src="${i.image}" class="card-img-top"  alt="..." style="height:340px;">
-                    </a>
-                            <span class="product-discount-label">-23%</span>
-                            <ul class="product-links">
-                                <li><a href="#"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                            <a href="addtocart?pid=${i.id}" class="add-to-cart">Add to Cart</a>
+
+            <div>
+                <hr>
+                <h3>Sản phẩm tương tự</h3>
+                <div class="row">
+                    <c:forEach items="${listPP}" var="i">
+                        <div class="col-md-3 col-sm-6" style="">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="detail?pid=${i.id}&cateID=${i.cateID}" >
+                                        <img src="${i.image}" class="card-img-top"  alt="..." style="height:400px;">
+                                    </a>
+                                    <span class="product-discount-label">-23%</span>
+                                    <ul class="product-links">
+                                        <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-random"></i></a></li>
+                                    </ul>
+                                    <a href="addtocart?pid=${i.id}" class="add-to-cart">Add to Cart</a>
+                                </div>
+                                <div class="product-content" style="height:100px;">
+                                    <h3 class="title"><a href="#"style="text-decoration:none;" >${i.name}</a></h3>
+                                    <div class="price">$${i.price} <span>$68.88</span></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#"style="text-decoration:none;" >${i.name}</a></h3>
-                            <div class="price">$${i.price} <span>$68.88</span></div>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
-                </c:forEach>
             </div>
+
 
         </div>
         <div class="product-info-tabs">
