@@ -89,7 +89,7 @@ public class DAO {
         List<Product> list = new ArrayList<>();
         String query = "select*from product\n" +
                 "order by id\n" +
-                "limit ?,3;";
+                "limit ?,6;";
         try {
             conn = new DAO().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);

@@ -248,7 +248,7 @@
           <div class="pro col-12 col-lg-4 col-md-6 mb-4">
             <div class="product-grid">
               <div class="product-image">
-                <a href="detail?pid=${o.id}&cateID=${o.cateID}" class="image">
+                <a href="detail?pid=${o.id}&cateID=${o.cateID}" class="image" >
                   <img class="pic-1" src="${o.image}">
                 </a>
                 <span class="product-sale-label">sale!</span>
@@ -260,7 +260,7 @@
                   <%--                                  <a href="print" class="add-to-cart"> add to cart </a>--%>
               </div>
               <div class="product-content">
-                <h3 class="title"><a href="detail?pid=${o.id}">${o.name}</a></h3>
+                <h3 class="title"><a href="detail?pid=${o.id}" style="text-decoration:none;">${o.name}</a></h3>
                 <ul class="rating">
                   <li class="fas fa-star"></li>
                   <li class="fas fa-star"></li>

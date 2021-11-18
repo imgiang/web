@@ -626,14 +626,14 @@
 
                 </div>
             </div>
-            <span>Similar items:</span>
+            <h3>Sản phẩm tương tự</h3>
             <div class="row">
                 <c:forEach items="${listPP}" var="i">
                 <div class="col-md-3 col-sm-6" style="">
                     <div class="product-grid">
                         <div class="product-image">
-                    <a href="detail?pid=${i.id}&cateID=${i.cateID}">
-                    <img src="${i.image}" class="card-img-top"  alt="...">
+                    <a href="detail?pid=${i.id}&cateID=${i.cateID}" >
+                    <img src="${i.image}" class="card-img-top"  alt="..." style="height:340px;">
                     </a>
                             <span class="product-discount-label">-23%</span>
                             <ul class="product-links">
@@ -644,7 +644,7 @@
                             <a href="addtocart?pid=${i.id}" class="add-to-cart">Add to Cart</a>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a href="#">${i.name}</a></h3>
+                            <h3 class="title"><a href="#"style="text-decoration:none;" >${i.name}</a></h3>
                             <div class="price">$${i.price} <span>$68.88</span></div>
                         </div>
                     </div>

@@ -213,24 +213,6 @@
                         Ship COD
                     </label>
                 </div>
-<%--                <div class="d-block my-3">--%>
-<%--                    <div class="custom-control custom-radio">--%>
-<%--                        <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""--%>
-<%--                               value="1">--%>
-<%--                        <label class="custom-control-label" for="httt-1"></label>--%>
-<%--                        <span>Tiền mặt</span>--%>
-<%--                    </div>--%>
-<%--                    <div class="custom-control custom-radio">--%>
-<%--                        <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""--%>
-<%--                               value="2">--%>
-<%--                        <label class="custom-control-label" for="httt-2">Chuyển khoản</label>--%>
-<%--                    </div>--%>
-<%--                    <div class="custom-control custom-radio">--%>
-<%--                        <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""--%>
-<%--                               value="3">--%>
-<%--                        <label class="custom-control-label" for="httt-3">Ship COD</label>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
 
                 <hr class="mb-4">
 <%--                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang" style="margin-bottom: 10px;">Đặt hàng</button>--%>
@@ -239,7 +221,7 @@
                     <button href="#myModal" class="btn btn-primary btn-lg btn-block" data-toggle="modal">Đặt hàng </button>
                 </div>
                 <!-- Modal HTML -->
-                <form>
+
                     <div id="myModal" class="modal fade">
                         <div class="modal-dialog modal-confirm">
                             <div class="modal-content">
