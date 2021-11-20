@@ -88,7 +88,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <form action="managersearch" method="get">
                         <div class="input-group no-border">
-                            <input type="text" value="" class="form-control" value="${txtM}" name="txtm" placeholder="Search...">
+                            <input type="text" class="form-control" value="${txtM}" name="txtm" placeholder="Search...">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <i class="fas fa-search"></i>
