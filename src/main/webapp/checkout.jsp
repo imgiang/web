@@ -66,7 +66,7 @@
         }
         .modal-confirm h4 {
             text-align: center;
-            font-size: 26px;
+            font-size: 40px;
             margin: 30px 0 -15px;
         }
         .modal-confirm .form-control, .modal-confirm .btn {
@@ -138,48 +138,46 @@
 
 <main>
     <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
-    <div class="container mt-4" style="background-color: #c9c4c2;width: 750px;">
+    <div class="container mt-4" style="background-color: #dae5e2;width: 800px;font-size: 10px;">
         <form class="needs-validation" name="frmthanhtoan" method="post"
               action="checkout">
             <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
 
             <div class="py-5 text-center">
                 <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
-                <h2>Thanh toán</h2>
-                <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+                <h2 style="font-size: 30px;font-weight: bold;">Thanh toán</h2>
+                <p class="lead" style="font-size: 15px;">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
             </div>
-
-
             <div class="">
-                <h4 class="mb-3">Thông tin khách hàng</h4>
+                <h4 class="mb-3" style="font-size: 25px;font-weight: bold;">Thông tin khách hàng</h4>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <label for="kh_ten">Họ tên</label>
+                        <label for="kh_ten" style="font-size: 20px;font-weight: normal;">Họ tên</label>
                         <input name="name" type="text"  id="kh_ten" class="form-control" placeholder="VD: Nguyễn Thành Công"
-                               required="" autofocus="">
+                               required="" autofocus="" style="font-size: 15px">
                         <%--                            <input name="user" type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="">--%>
                     </div>
                     <div class="col-md-12">
-                        <label for="kh_gioitinh">Giới tính</label>
+                        <label for="kh_gioitinh" style="font-size: 20px;font-weight: normal;">Giới tính</label>
                         <input  name="gioitinh" type="text" id="kh_gioitinh" class="form-control" placeholder="VD:Nam"
-                                required="" autofocus="">
+                                required="" autofocus="" style="font-size: 15px" >
 
                     </div>
                     <div class="col-md-12">
-                        <label for="kh_diachi">Địa chỉ</label>
+                        <label for="kh_diachi"  style="font-size: 20px;font-weight: normal;">Địa chỉ</label>
                         <input name="diachi" type="text" id="kh_diachi" class="form-control" placeholder="VD:130 Xô Viết Nghệ Tỉnh"
-                               required="" autofocus="">
+                               required="" autofocus="" style="font-size: 15px">
                     </div>
                     <div class="col-md-12">
-                        <label for="kh_dienthoai">Điện thoại</label>
+                        <label for="kh_dienthoai"  style="font-size: 20px;font-weight: normal;">Điện thoại</label>
                         <input name="dienthoai" type="text" id="kh_dienthoai" class="form-control" placeholder="VD:0915659223"
-                               required="" autofocus="">
+                               required="" autofocus="" style="font-size: 15px">
                     </div>
                     <div class="col-md-12">
-                        <label for="kh_email">Email</label>
+                        <label for="kh_email"  style="font-size: 20px;font-weight: normal;">Email</label>
                         <input name="email" type="text" id="kh_email" class="form-control" placeholder="VD:phucuong@ctu.edu.vn"
-                               required="" autofocus="">
+                               required="" autofocus="" style="font-size: 15px">
                     </div>
                     <%--                        <div class="col-md-12">--%>
                     <%--                            <label for="kh_ngaysinh">Ngày sinh</label>--%>
@@ -187,39 +185,36 @@
                     <%--                                   required="" autofocus="">--%>
                     <%--                        </div>--%>
                     <div class="col-md-12">
-                        <label for="kh_cmnd">CMND</label>
+                        <label for="kh_cmnd"  style="font-size: 20px;font-weight: normal;">CMND</label>
                         <input name="cmnd" type="text" id="kh_cmnd" class="form-control" placeholder="VD:362209685"
-                               required="" autofocus="">
+                               required="" autofocus="" style="font-size: 15px">
                     </div>
                 </div>
 
-                <h4 class="mb-3">Hình thức thanh toán</h4>
+                <h4 class="mb-3" style="font-size: 20px;font-weight: bold;">Hình thức thanh toán</h4>
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1"  style="font-size: 15px;font-weight: normal;">
                         Tiền mặt
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2" style="font-size: 15px;font-weight: normal;">
                         Chuyển khoản
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2"  style="font-size: 15px;font-weight: normal;"">
                         Ship COD
                     </label>
                 </div>
 
                 <hr class="mb-4">
 <%--                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang" style="margin-bottom: 10px;">Đặt hàng</button>--%>
-                <div >
-                    <!-- Button HTML (to Trigger Modal) -->
-                    <button href="#myModal" class="btn btn-primary btn-lg btn-block" data-toggle="modal">Đặt hàng </button>
-                </div>
+
                 <!-- Modal HTML -->
 
                     <div id="myModal" class="modal fade">
@@ -232,19 +227,24 @@
                                     <h4 class="modal-title">Bạn đã đặt hàng thành công!</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="text-center">Đơn hàng của bạn đã được xác nhận và sẽ được giao đến bạn trong thời gian sơm nhất</p>
+                                    <p class="text-center" style="font-size: 15px;">Đơn hàng của bạn đã được xác nhận và sẽ được giao đến bạn trong thời gian sớm nhất</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn btn-success btn-block" type="submit" name="btnDatHang" data-dismiss="modal">Xem chi tiết đơn hàng</button>
+
+                                    <button class="btn btn-success btn-block" type="submit" name="btnDatHang" style="font-size: 15px;" >Xem chi tiết đơn hàng >>></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
+
 
             </div>
 
         </form>
+        <div style="margin-bottom: 5px;">
+            <!-- Button HTML (to Trigger Modal) -->
+            <button data-target="#myModal" class="btn btn-primary btn-lg btn-block" data-toggle="modal">Đặt hàng </button>
+        </div>
     </div>
 
 
@@ -269,7 +269,13 @@
 <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
 <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
-
+<script>
+    function showModel() {
+        const elem = document.getElementById("myModel")
+        elem.style.display = "block"
+        setTimeout(() => elem.style.display = "none", 8000)
+    }
+</script>
 
 </body>
 

@@ -61,8 +61,8 @@
                     Filter
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" formaction="descending" formmethod="get" type="button"><a href="descending">Price Descending</a></button>
-                    <button class="dropdown-item" formaction="ascending" formmethod="get" type="button"><a href="ascending">Price Ascending</a></button>
+                    <button class="dropdown-item" formaction="descending" formmethod="get" type="button"><a href="descending" style="text-decoration: none">Price Descending</a></button>
+                    <button class="dropdown-item" formaction="ascending" formmethod="get" type="button"><a href="ascending" style="text-decoration: none">Price Ascending</a></button>
                 </div>
             </div>
         </div>

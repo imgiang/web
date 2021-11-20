@@ -106,7 +106,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import java.io.PrintWriter;
 @WebServlet("/checkout")
 public class CheckOutControl extends HttpServlet {
 
@@ -121,8 +121,8 @@ public class CheckOutControl extends HttpServlet {
                 String email = request.getParameter("email");
                 String cmnd = request.getParameter("cmnd");
                 DAO dao = new DAO();
-
-                        //dc chekout
+                Customer a=dao.checkCustomerExist(cmnd);
+                //dc chekout
 
                 dao.checkout(name,gioitinh,diachi,dienthoai,email,cmnd);
                 response.sendRedirect("myorder");
